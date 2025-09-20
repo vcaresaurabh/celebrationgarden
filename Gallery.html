@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery - Celebration Garden</title>
+  <script>
+    fetch('includes/head.html')
+      .then(r => { if (!r.ok) throw new Error(r.statusText); return r.text(); })
+      .then(html => document.head.insertAdjacentHTML('beforeend', html))
+      .catch(e => console.error('Assets load error:', e));
+  </script>
+</head>
+<body>
+  <div id="header"></div>
+  <main>
+    <h1>Gallery</h1>
+    <p>View our event gallery.</p>
+  </main>
+  <div id="footer"></div>
+  <script src="includes/footer-scripts.js"></script>
+
+</body>
+</html>

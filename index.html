@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Celebration Garden</title>
+  <script>
+    fetch('includes/head.html')
+      .then(r => { if (!r.ok) throw new Error(r.statusText); return r.text(); })
+      .then(html => document.head.insertAdjacentHTML('beforeend', html))
+      .catch(e => console.error('Assets load error:', e));
+  </script>
+</head>
+<body>
+  <div id="header"></div>
+  <main>
+    <h1>Home Page</h1>
+    <p>Welcome to the Celebration Garden Home Page.</p>
+  </main>
+  <div id="footer"></div>
+
+  <script src="includes/footer-scripts.js"></script>
+</body>
+</html>
