@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Venues - Celebration Garden</title>
-  <script>
-    fetch('includes/head.html')
-      .then(r => { if (!r.ok) throw new Error(r.statusText); return r.text(); })
-      .then(html => document.head.insertAdjacentHTML('beforeend', html))
-      .catch(e => console.error('Assets load error:', e));
-  </script>
+  <!-- Preconnect to Google fonts for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts (load early) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Preload main stylesheet to prioritize CSS -->
+  <link rel="preload" href="assets/css/styles.css" as="style">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Optional library stylesheet -->
+  <link rel="preload" href="assets/css/library.css" as="style">
+  <link rel="stylesheet" href="assets/css/library.css">
 </head>
 <body>
   <div id="header"></div>

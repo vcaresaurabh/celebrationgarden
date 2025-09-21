@@ -4,21 +4,204 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Celebration Garden</title>
-  <script>
-    fetch('includes/head.html')
-      .then(r => { if (!r.ok) throw new Error(r.statusText); return r.text(); })
-      .then(html => document.head.insertAdjacentHTML('beforeend', html))
-      .catch(e => console.error('Assets load error:', e));
-  </script>
+  <!-- Preconnect to Google fonts for faster font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts (load early) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Preload main stylesheet to prioritize CSS -->
+  <link rel="preload" href="assets/css/styles.css" as="style">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Optional library stylesheet -->
+  <link rel="preload" href="assets/css/library.css" as="style">
+  <link rel="stylesheet" href="assets/css/library.css">
 </head>
 <body>
   <div id="header"></div>
-  <main>
-    <h1>Home Page</h1>
-    <p>Welcome to the Celebration Garden Home Page.</p>
-  </main>
+   <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Where Beautiful Celebrations Begin</h1>
+            <p>Elegant banquet venues designed to make your special day truly unforgettable</p>
+            <a href="#" class="cta-button">Explore Our Venues</a>
+        </div>
+    </section>
+
+    <!-- Venues Section -->
+    <section class="venues">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Venues</h2>
+            </div>
+            <div class="venues-grid">
+                <div class="venue-card">
+                    <div class="venue-img">
+                        <img src="https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Grand Ballroom">
+                    </div>
+                    <div class="venue-info">
+                        <h3>Grand Ballroom</h3>
+                        <p>An elegant space with crystal chandeliers and classic architectural details for a sophisticated celebration.</p>
+                        <div class="venue-features">
+                            <div class="feature">
+                                <span>500</span>
+                                Guests
+                            </div>
+                            <div class="feature">
+                                <span>5,000</span>
+                                Sq Ft
+                            </div>
+                            <div class="feature">
+                                <span>Indoor</span>
+                                Setting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="venue-card">
+                    <div class="venue-img">
+                        <img src="https://images.unsplash.com/photo-1549451378-6f6b6b2ca3d5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Garden Pavilion">
+                    </div>
+                    <div class="venue-info">
+                        <h3>Garden Pavilion</h3>
+                        <p>A beautiful glass-enclosed space surrounded by lush gardens, perfect for daytime celebrations.</p>
+                        <div class="venue-features">
+                            <div class="feature">
+                                <span>250</span>
+                                Guests
+                            </div>
+                            <div class="feature">
+                                <span>3,500</span>
+                                Sq Ft
+                            </div>
+                            <div class="feature">
+                                <span>Garden</span>
+                                Setting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="venue-card">
+                    <div class="venue-img">
+                        <img src="https://images.unsplash.com/photo-1573883844852-32a5d5b5fd13?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Royal Terrace">
+                    </div>
+                    <div class="venue-info">
+                        <h3>Royal Terrace</h3>
+                        <p>An open-air terrace with panoramic views, ideal for intimate gatherings and cocktail receptions.</p>
+                        <div class="venue-features">
+                            <div class="feature">
+                                <span>150</span>
+                                Guests
+                            </div>
+                            <div class="feature">
+                                <span>2,000</span>
+                                Sq Ft
+                            </div>
+                            <div class="feature">
+                                <span>Outdoor</span>
+                                Setting
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Creating Unforgettable Moments Since 2005</h2>
+                    <p>Celebration Garden was founded with a simple vision: to provide exceptional banquet facilities where couples and families can celebrate life's most precious moments in an atmosphere of elegance and warmth.</p>
+                    <p>Our experienced team pays attention to every detail, ensuring that your event is executed flawlessly. From intimate gatherings to grand celebrations, we have the perfect venue for your special day.</p>
+                    <a href="#" class="cta-button">Learn More About Us</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1563492065599-3520f775eeed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Celebration Garden Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonials</h2>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <p class="testimonial-text">"We hosted our daughter's wedding at Celebration Garden and it exceeded all our expectations. The staff was incredibly attentive, the food was exquisite, and the Garden Pavilion provided the perfect backdrop for their special day."</p>
+                    <p class="testimonial-author">- The Sharma Family</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"The Grand Ballroom was everything we dreamed of for our wedding reception. The crystal chandeliers and elegant decor created a magical atmosphere that our guests are still talking about!"</p>
+                    <p class="testimonial-author">- Priya & Raj</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-details">
+                        <p>📍 123 Celebration Road, Mumbai, India 400001</p>
+                        <p>📞 +91 22 1234 5678</p>
+                        <p>✉️ info@celebrationgarden.in</p>
+                    </div>
+                    <p>Our office hours are Monday to Saturday, 10:00 AM to 7:00 PM. Feel free to reach out to us for any inquiries or to schedule a venue tour.</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="event-type">Event Type</label>
+                            <select id="event-type">
+                                <option value="">Select Event Type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="reception">Reception</option>
+                                <option value="anniversary">Anniversary</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
   <div id="footer"></div>
 
   <script src="includes/footer-scripts.js"></script>
-</body>
-</html>
+  </body>
+  </html>

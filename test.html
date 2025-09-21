@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebration Garden - Header Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(to bottom, #f8f5f0, #ffffff);
+            color: #2E2E2E;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            width: 100%;
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        header:hover {
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2E2E2E;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 10px;
+            color: #D4A5A5;
+            font-size: 1.5rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 2.2rem;
+            position: relative;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #2E2E2E;
+            font-weight: 400;
+            font-size: 1rem;
+            transition: color 0.3s;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+        
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #D4A5A5;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: #D4A5A5;
+        }
+        
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+        
+        .nav-menu a.active {
+            color: #A4B8A4;
+            font-weight: 500;
+        }
+        
+        .nav-menu a.active:after {
+            width: 100%;
+            background-color: #A4B8A4;
+        }
+        
+        .cta-button {
+            background-color: #A4B8A4;
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(164, 184, 164, 0.25);
+        }
+        
+        .cta-button:hover {
+            background-color: #D4A5A5;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(212, 165, 165, 0.3);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #2E2E2E;
+            cursor: pointer;
+        }
+        
+        /* Demo Content */
+        .demo-content {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem;
+            max-width: 800px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #2E2E2E;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            color: #666;
+        }
+        
+        .style-showcase {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .color-swatch {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 0.8rem;
+        }
+        
+        .swatch-1 { background: #A4B8A4; }
+        .swatch-2 { background: #D4A5A5; }
+        .swatch-3 { background: #2E2E2E; }
+        .swatch-4 { background: #F8F5F0; color: #2E2E2E; }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav-menu {
+                gap: 1.5rem;
+            }
+            
+            .nav-menu li {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                border-radius: 0 0 12px 12px;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu li {
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .cta-button {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-container">
+                <a href="#" class="logo">
+                    <i class="fas fa-leaf logo-icon"></i>
+                    Celebration Garden
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Venues</a></li>
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                
+                <a href="#" class="cta-button">Schedule a Visit</a>
+            </div>
+        </header>
+        
+        <div class="demo-content">
+            <h1>Elegant Header Design</h1>
+            <p>This minimalist header features a sophisticated color palette perfect for a wedding venue website. The design is clean, responsive, and emphasizes usability with subtle animations.</p>
+            
+            <div class="style-showcase">
+                <div class="color-swatch swatch-1">
+                    <span>Sage Green</span>
+                    <span>#A4B8A4</span>
+                </div>
+                <div class="color-swatch swatch-2">
+                    <span>Dusty Rose</span>
+                    <span>#D4A5A5</span>
+                </div>
+                <div class="color-swatch swatch-3">
+                    <span>Charcoal</span>
+                    <span>#2E2E2E</span>
+                </div>
+                <div class="color-swatch swatch-4">
+                    <span>Cream</span>
+                    <span>#F8F5F0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu functionality
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideMenu = document.querySelector('.nav-menu').contains(event.target);
+            const isClickOnMenuButton = document.querySelector('.mobile-menu-btn').contains(event.target);
+            
+            if (!isClickInsideMenu && !isClickOnMenuButton) {
+                document.querySelector('.nav-menu').classList.remove('active');
+            }
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.padding = '0.8rem 2rem';
+                header.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '1rem 2rem';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.08)';
+            }
+        });
+    </script>
+</body>
+</html>
