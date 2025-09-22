@@ -23,6 +23,7 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
+            row-gap: 20px;
         }
 
         body>section,
@@ -155,35 +156,207 @@
 
 
         
-        /* Hero Section */
-        .hero {
+             /* Hero Section Styles */
+        .hero-slider {
+            position: relative;
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
+            justify-content: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(248, 245, 240, 0.2), rgba(248, 245, 240, 0.7));
+        }
+        
+        .slide-content {
             text-align: center;
-            color: var(--color-white);
-            margin-top: 80px;
-        }
-        
-        .hero-content {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem;
+            z-index: 10;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease 0.5s;
         }
         
-        .hero h1 {
-            font-family: var(--font-heading);
+        .slide.active .slide-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-title {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
-            line-height: 1.2;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            color: #2E2E2E;
+            letter-spacing: 2px;
+            font-family: 'Playfair Display', serif;
         }
         
-        .hero p {
+        .slide-subtitle {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            color: #6B6262;
+            line-height: 1.6;
             font-weight: 300;
         }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: #A4B8A4;
+            color: white;
+            text-decoration: none;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        
+        .btn:hover {
+            background-color: #8fa38f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slider-nav {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            z-index: 10;
+        }
+        
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(46, 46, 46, 0.4);
+            margin: 0 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-dot.active {
+            background-color: #2E2E2E;
+            transform: scale(1.2);
+        }
+        
+        .slider-arrows {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 2rem;
+            z-index: 10;
+        }
+        
+        .arrow {
+            color: #2E2E2E;
+            font-size: 2rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .arrow:hover {
+            opacity: 1;
+        }
+
+          .video-slide {
+        position: relative;
+    }
+    
+    .video-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+    
+    .video-container video {
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+    }
+    
+    .video-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(248, 245, 240, 0.4);
+    }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .slide-title {
+                font-size: 2.5rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .slide-content {
+                padding: 0 1rem;
+            }
+            
+            .slider-arrows {
+                padding: 0 1rem;
+            }
+            
+            .arrow {
+                font-size: 1.5rem;
+            }
+        }
+
+          /* Hero Section Styles */
         
         /* Section Styles */
         section {
@@ -215,71 +388,245 @@
         }
         
         /* Venues Section */
-        .venues-grid {
+          /* Self-contained venues gallery section */
+        .venue-gallery-section {
+            --playfair: 'Playfair Display', serif;
+            --cormorant: 'Cormorant Garamond', serif;
+            --system-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            
+            font-family: var(--system-ui);
+            background-color: #F8F5F0;
+            color: #2E2E2E;
+            line-height: 1.6;
+            padding: 4rem 2rem;
+        }
+        
+        .venue-gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .venue-gallery-section .section-title {
+            font-family: var(--playfair);
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2E2E2E;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .venue-gallery-section .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-accent);
+        }
+        
+        .venue-gallery-section .areas-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
         }
         
-        .venue-card {
-            background: var(--color-white);
+        .venue-gallery-section .area-item {
+            display: flex;
+            align-items: center;
+            padding: 1.5rem;
             border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+            background: rgba(164, 184, 164, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
         }
         
-        .venue-card:hover {
-            transform: translateY(-10px);
+        .venue-gallery-section .area-item:hover {
+            background: rgba(164, 184, 164, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-color: #A4B8A4;
         }
         
-        .venue-img {
-            height: 250px;
-            overflow: hidden;
+        .venue-gallery-section .area-icon {
+            width: 60px;
+            height: 60px;
+            background: #A4B8A4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
         }
         
-        .venue-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .venue-card:hover .venue-img img {
+        .venue-gallery-section .area-item:hover .area-icon {
+            background: #8a9c8a;
             transform: scale(1.1);
         }
         
-        .venue-info {
-            padding: 1.5rem;
-        }
-        
-        .venue-info h3 {
-            font-family: var(--font-heading);
+        .venue-gallery-section .area-icon i {
+            color: white;
             font-size: 1.5rem;
+        }
+        
+        .venue-gallery-section .area-info h4 {
+            font-family: var(--playfair);
+            font-size: 1.3rem;
             margin-bottom: 0.5rem;
+            color: #2E2E2E;
+            font-weight: 500;
         }
         
-        .venue-info p {
-            margin-bottom: 1rem;
-            color: #666;
+        .venue-gallery-section .area-info p {
+            color: #6B6262;
+            font-size: 0.95rem;
+            font-family: var(--system-ui);
         }
         
-        .venue-features {
+        /* Modal Styles */
+        .venue-gallery-section .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            overflow-y: auto;
+        }
+        
+        .venue-gallery-section .modal.active {
+            display: flex;
+            opacity: 1;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .venue-gallery-section .modal-content {
+            background: #F8F5F0;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 1000px;
+            max-height: 90vh;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+        
+        .venue-gallery-section .modal-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(164, 184, 164, 0.3);
             display: flex;
             justify-content: space-between;
-            margin-top: 1rem;
-            border-top: 1px solid #eee;
-            padding-top: 1rem;
+            align-items: center;
         }
         
-        .feature {
-            text-align: center;
+        .venue-gallery-section .modal-title {
+            font-family: var(--playfair);
+            font-size: 1.8rem;
+            color: #2E2E2E;
+            margin: 0;
         }
         
-        .feature span {
-            display: block;
-            font-weight: 700;
-            color: var(--color-primary);
+        .venue-gallery-section .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: #6B6262;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .venue-gallery-section .close-modal:hover {
+            color: #A4B8A4;
+        }
+        
+        .venue-gallery-section .modal-body {
+            padding: 2rem;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        
+        .venue-gallery-section .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .venue-gallery-section .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            height: 220px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .venue-gallery-section .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .venue-gallery-section .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .venue-gallery-section .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .venue-gallery-section .modal-description {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(164, 184, 164, 0.1);
+            border-radius: 8px;
+            font-family: var(--cormorant);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #6B6262;
+        }
+        
+        @media (max-width: 768px) {
+            .venue-gallery-section .areas-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .venue-gallery-section {
+                padding: 2rem 1rem;
+            }
+            
+            .venue-gallery-section .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .venue-gallery-section .section-title {
+                font-size: 2rem;
+            }
+            
+            .venue-gallery-section .area-item {
+                padding: 1.2rem;
+            }
+            
+            .venue-gallery-section .area-icon {
+                width: 50px;
+                height: 50px;
+                margin-right: 1rem;
+            }
+            
+            .venue-gallery-section .area-icon i {
+                font-size: 1.2rem;
+            }
         }
         
         /* About Section */
