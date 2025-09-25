@@ -3,527 +3,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venue Areas Gallery</title>
+    <title>Services | Celebration Garden</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        /* Self-contained venues gallery section */
-        .venue-gallery-section {
-            --playfair: 'Playfair Display', serif;
-            --cormorant: 'Cormorant Garamond', serif;
-            --system-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            
-            font-family: var(--system-ui);
-            background-color: #F8F5F0;
-            color: #2E2E2E;
-            line-height: 1.6;
-            padding: 4rem 2rem;
-        }
-        
-        .venue-gallery-container {
+        /* Scoped CSS for services section only */
+        .cg-services-section {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 80px 20px;
+            font-family: 'Montserrat', sans-serif;
+            background: #ffffff;
         }
         
-        .venue-gallery-section .section-title {
-            font-family: var(--playfair);
-            font-size: 2.5rem;
+        .cg-services-header {
             text-align: center;
-            margin-bottom: 3rem;
-            color: #2E2E2E;
-            font-weight: 400;
-            position: relative;
-            padding-bottom: 1rem;
+            margin-bottom: 60px;
         }
         
-        .venue-gallery-section .section-title:after {
+        .cg-services-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #A4B8A4;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+        
+        .cg-services-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: #2E2E2E;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .cg-services-title::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -12px;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
-            height: 2px;
-            background-color: #A4B8A4;
+            height: 3px;
+            background: var(--color-accent);
+            border-radius: 2px;
         }
         
-        .venue-gallery-section .areas-grid {
+        .cg-services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
         
-        .venue-gallery-section .area-item {
-            display: flex;
-            align-items: center;
-            padding: 1.5rem;
-            border-radius: 8px;
-            background: rgba(164, 184, 164, 0.1);
+        .cg-service-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
             transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid transparent;
+            border: 1px solid #f0f0f0;
+            position: relative;
+            overflow: hidden;
         }
         
-        .venue-gallery-section .area-item:hover {
-            background: rgba(164, 184, 164, 0.2);
+        .cg-service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #a4b8a4;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .cg-service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-color: #A4B8A4;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
         }
         
-        .venue-gallery-section .area-icon {
-            width: 60px;
-            height: 60px;
-            background: #A4B8A4;
+        .cg-service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .cg-service-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 1.5rem;
-            flex-shrink: 0;
+            color: #A4B8A4;
+            font-size: 2rem;
+            border: 2px solid #f0f0f0;
             transition: all 0.3s ease;
         }
         
-        .venue-gallery-section .area-item:hover .area-icon {
-            background: #8a9c8a;
-            transform: scale(1.1);
+        .cg-service-card:hover .cg-service-icon {
+            background: #a4b8a4;
+            color: #ffffff;
+            border-color: #A4B8A4;
         }
         
-        .venue-gallery-section .area-icon i {
-            color: white;
-            font-size: 1.5rem;
-        }
-        
-        .venue-gallery-section .area-info h4 {
-            font-family: var(--playfair);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+        .cg-service-content {
             color: #2E2E2E;
+        }
+        
+        .cg-service-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2E2E2E;
+        }
+        
+        .cg-service-details {
+            color: #5d6d7e;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .cg-service-feature {
+            display: inline-block;
+            background: #f8f9fa;
+            color: #A4B8A4;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 500;
+            border: 1px solid #eaecee;
         }
         
-        .venue-gallery-section .area-info p {
-            color: #6B6262;
-            font-size: 0.95rem;
-            font-family: var(--system-ui);
-        }
-        
-        /* Modal Styles */
-        .venue-gallery-section .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            z-index: 1000;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            overflow-y: auto;
-        }
-        
-        .venue-gallery-section .modal.active {
+        .cg-capacity-highlight {
             display: flex;
-            opacity: 1;
             justify-content: center;
             align-items: center;
-        }
-        
-        .venue-gallery-section .modal-content {
-            background: #F8F5F0;
+            gap: 30px;
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f5f0, #ffffff);
             border-radius: 12px;
-            width: 90%;
-            max-width: 1000px;
-            max-height: 90vh;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #A4B8A4;
         }
         
-        .venue-gallery-section .modal-header {
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(164, 184, 164, 0.3);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .cg-capacity-item {
+            text-align: center;
         }
         
-        .venue-gallery-section .modal-title {
-            font-family: var(--playfair);
-            font-size: 1.8rem;
-            color: #2E2E2E;
-            margin: 0;
-        }
-        
-        .venue-gallery-section .close-modal {
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: #6B6262;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .venue-gallery-section .close-modal:hover {
+        .cg-capacity-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
             color: #A4B8A4;
+            line-height: 1;
+            margin-bottom: 5px;
         }
         
-        .venue-gallery-section .modal-body {
-            padding: 2rem;
-            max-height: 60vh;
-            overflow-y: auto;
+        .cg-capacity-label {
+            font-size: 0.9rem;
+            color: #5d6d7e;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .venue-gallery-section .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1.5rem;
+        .cg-capacity-divider {
+            width: 1px;
+            height: 50px;
+            background: #eaecee;
         }
         
-        .venue-gallery-section .gallery-item {
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            height: 220px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .venue-gallery-section .gallery-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .venue-gallery-section .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .venue-gallery-section .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-        
-        .venue-gallery-section .modal-description {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: rgba(164, 184, 164, 0.1);
-            border-radius: 8px;
-            font-family: var(--cormorant);
-            font-size: 1.1rem;
-            line-height: 1.6;
-            color: #6B6262;
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .cg-services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 30px;
+            }
+            
+            .cg-capacity-highlight {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .cg-capacity-divider {
+                width: 100px;
+                height: 1px;
+            }
         }
         
         @media (max-width: 768px) {
-            .venue-gallery-section .areas-grid {
+            .cg-services-section {
+                padding: 60px 15px;
+            }
+            
+            .cg-services-title {
+                font-size: 2.2rem;
+            }
+            
+            .cg-services-grid {
                 grid-template-columns: 1fr;
+                gap: 25px;
+                margin-top: 40px;
             }
             
-            .venue-gallery-section {
-                padding: 2rem 1rem;
+            .cg-service-card {
+                padding: 30px 20px;
             }
             
-            .venue-gallery-section .gallery-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .venue-gallery-section .section-title {
+            .cg-capacity-number {
                 font-size: 2rem;
             }
-            
-            .venue-gallery-section .area-item {
-                padding: 1.2rem;
+        }
+        
+        @media (max-width: 480px) {
+            .cg-services-title {
+                font-size: 1.8rem;
             }
             
-            .venue-gallery-section .area-icon {
-                width: 50px;
-                height: 50px;
-                margin-right: 1rem;
+            .cg-service-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.8rem;
             }
             
-            .venue-gallery-section .area-icon i {
+            .cg-service-name {
                 font-size: 1.2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Example of other page content with different font -->
-    <div style="font-family: Arial, sans-serif; padding: 20px;">
-        <h1>Other Page Content</h1>
-        <p>This content uses a different font family and won't be affected by the venues gallery styling.</p>
-    </div>
-
-    <!-- Venue Gallery Section -->
-    <section class="venue-gallery-section">
-        <div class="venue-gallery-container">
-            <h2 class="section-title">Venue Areas & Facilities</h2>
+    <!-- Services Section -->
+    <section class="cg-services-section">
+        <div class="cg-services-header">
+            <p class="cg-services-subtitle">Premium Amenities</p>
+            <h2 class="cg-services-title">Services Offered By Us</h2>
+        </div>
+        
+        <div class="cg-capacity-highlight">
+            <div class="cg-capacity-item">
+                <div class="cg-capacity-number">12,000</div>
+                <div class="cg-capacity-label">Sq. Ft. Party Lawn</div>
+            </div>
             
-            <div class="areas-grid">
-                <div class="area-item" data-area="lawn">
-                    <div class="area-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Lawn Area</h4>
-                        <p>Beautiful outdoor space for ceremonies</p>
-                    </div>
-                </div>
-                
-                <div class="area-item" data-area="entrance">
-                    <div class="area-icon">
-                        <i class="fas fa-door-open"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Grand Entrance</h4>
-                        <p>Elegant welcome area with floral arrangements</p>
-                    </div>
-                </div>
-                
-                <div class="area-item" data-area="dining">
-                    <div class="area-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Dining Area</h4>
-                        <p>Spacious seating with customizable layouts</p>
-                    </div>
-                </div>
-                
-                <div class="area-item" data-area="dance">
-                    <div class="area-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Dance Floor</h4>
-                        <p>Custom illuminated dance floor area</p>
-                    </div>
-                </div>
-                
-                <div class="area-item" data-area="lounge">
-                    <div class="area-icon">
-                        <i class="fas fa-couch"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Lounge Section</h4>
-                        <p>Comfortable seating for casual conversations</p>
-                    </div>
-                </div>
-                
-                <div class="area-item" data-area="bar">
-                    <div class="area-icon">
-                        <i class="fas fa-glass-cheers"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Bar Counter</h4>
-                        <p>Elegantly designed bar with premium service</p>
-                    </div>
-                </div>
-                
-                <div class="area-item" data-area="photoshoot">
-                    <div class="area-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Photoshoot Area</h4>
-                        <p>Beautifully designed spaces for capturing special moments</p>
-                    </div>
-                </div>
-                
-                <div class="area-item" data-area="coffee">
-                    <div class="area-icon">
-                        <i class="fas fa-coffee"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Coffee Bar</h4>
-                        <p>Premium coffee and refreshments station for your guests</p>
-                    </div>
-                </div>
+            <div class="cg-capacity-divider"></div>
+            
+            <div class="cg-capacity-item">
+                <div class="cg-capacity-number">200</div>
+                <div class="cg-capacity-label">Car Parking Facility</div>
             </div>
         </div>
         
-        <!-- Modal for displaying area images -->
-        <div class="modal" id="galleryModal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="modalAreaTitle">Area Title</h3>
-                    <button class="close-modal">&times;</button>
+        <div class="cg-services-grid">
+            <!-- Water Supply -->
+            <div class="cg-service-card">
+                <div class="cg-service-icon">
+                    <i class="fas fa-faucet"></i>
                 </div>
-                <div class="modal-body">
-                    <div class="gallery-container" id="areaGallery">
-                        <!-- Gallery items will be inserted here by JavaScript -->
-                    </div>
-                    <div class="modal-description" id="areaDescription">
-                        <!-- Description will be inserted here by JavaScript -->
-                    </div>
+                <div class="cg-service-content">
+                    <h3 class="cg-service-name">Premium Water Supply</h3>
+                    <p class="cg-service-details">Dedicated water supply facility for kitchen and venue needs, ensuring seamless operations throughout your event.</p>
+                    <span class="cg-service-feature">Kitchen Ready</span>
+                </div>
+            </div>
+            
+            <!-- Women's Hall -->
+            <div class="cg-service-card">
+                <div class="cg-service-icon">
+                    <i class="fas fa-female"></i>
+                </div>
+                <div class="cg-service-content">
+                    <h3 class="cg-service-name">Exclusive Women's Hall</h3>
+                    <p class="cg-service-details">A dedicated, comfortable space designed specifically for women guests, ensuring privacy and convenience.</p>
+                    <span class="cg-service-feature">Private Space</span>
+                </div>
+            </div>
+            
+            <!-- Air Conditioned Hall -->
+            <div class="cg-service-card">
+                <div class="cg-service-icon">
+                    <i class="fas fa-snowflake"></i>
+                </div>
+                <div class="cg-service-content">
+                    <h3 class="cg-service-name">Air Conditioned Halls</h3>
+                    <p class="cg-service-details">Fully climate-controlled venues providing optimal comfort regardless of weather conditions outside.</p>
+                    <span class="cg-service-feature">Climate Control</span>
+                </div>
+            </div>
+            
+            <!-- Parking Security -->
+            <div class="cg-service-card">
+                <div class="cg-service-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="cg-service-content">
+                    <h3 class="cg-service-name">Professional Parking Security</h3>
+                    <p class="cg-service-details">Trained parking guards ensuring the safety and security of all vehicles throughout your event duration.</p>
+                    <span class="cg-service-feature">24/7 Security</span>
+                </div>
+            </div>
+            
+            <!-- Kitchen Area -->
+            <div class="cg-service-card">
+                <div class="cg-service-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <div class="cg-service-content">
+                    <h3 class="cg-service-name">Professional Kitchen Facility</h3>
+                    <p class="cg-service-details">Fully equipped kitchen area with modern amenities for efficient food preparation and catering services.</p>
+                    <span class="cg-service-feature">Fully Equipped</span>
+                </div>
+            </div>
+            
+            <!-- Event Support -->
+            <div class="cg-service-card">
+                <div class="cg-service-icon">
+                    <i class="fas fa-concierge-bell"></i>
+                </div>
+                <div class="cg-service-content">
+                    <h3 class="cg-service-name">Comprehensive Event Support</h3>
+                    <p class="cg-service-details">Dedicated staff and support services to ensure every aspect of your event runs smoothly and efficiently.</p>
+                    <span class="cg-service-feature">Full Support</span>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Example of more other page content -->
-    <div style="font-family: Arial, sans-serif; padding: 20px;">
-        <h2>More Page Content</h2>
-        <p>This content also uses a different font family and remains unaffected by the venues gallery.</p>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Area data with images and descriptions
-            const areaData = {
-                lawn: {
-                    title: "Lawn Area",
-                    description: "Our beautifully manicured lawn area provides a stunning outdoor setting for ceremonies and cocktail hours. Surrounded by lush gardens and elegant landscaping, this space creates a perfect backdrop for your special moments with natural beauty and tranquility.",
-                    images: [
-                        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1444212477490-ca407925329e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                entrance: {
-                    title: "Grand Entrance",
-                    description: "Make a memorable first impression with our grand entrance area featuring elegant architectural details, stunning floral arrangements, and a welcoming ambiance that sets the tone for your celebration.",
-                    images: [
-                        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1540946485067-953f20a4c5a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                dining: {
-                    title: "Dining Area",
-                    description: "Our elegant dining area features customizable layouts to accommodate your guests comfortably. With attention to detail and sophisticated decor, this space provides the perfect atmosphere for enjoying culinary delights and celebrations.",
-                    images: [
-                        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                dance: {
-                    title: "Dance Floor",
-                    description: "Our custom illuminated dance floor creates the perfect centerpiece for celebrations. With state-of-the-art lighting and a spacious design, your guests will enjoy dancing the night away in style.",
-                    images: [
-                        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1501281667305-0d4ebd5b1b08?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                lounge: {
-                    title: "Lounge Section",
-                    description: "Our comfortable lounge area provides a relaxed setting for guests to mingle and enjoy conversation. With plush seating and intimate lighting, it's the perfect escape from the dance floor.",
-                    images: [
-                        "https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1533090368676-1fd25485db88?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                bar: {
-                    title: "Bar Counter",
-                    description: "Our elegantly designed bar counter offers premium beverage service with skilled bartenders ready to craft delicious drinks for your guests. The sophisticated design complements any event style.",
-                    images: [
-                        "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                photoshoot: {
-                    title: "Photoshoot Area",
-                    description: "Our specially designed photoshoot areas provide beautiful backdrops for capturing your special moments. With carefully curated settings and optimal lighting, these spaces ensure stunning photographs.",
-                    images: [
-                        "https://images.unsplash.com/photo-1551248429-40975aa4de74?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1519735772110-17bb5d13cfc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1588516903728-8f33f9edc82c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                coffee: {
-                    title: "Coffee Bar",
-                    description: "Our premium coffee bar offers expertly crafted beverages and refreshments for your guests. Featuring high-quality beans and skilled baristas, it's the perfect addition to any event.",
-                    images: [
-                        "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                }
-            };
-            
-            // Get DOM elements
-            const areaItems = document.querySelectorAll('.area-item');
-            const modal = document.getElementById('galleryModal');
-            const modalTitle = document.getElementById('modalAreaTitle');
-            const galleryContainer = document.getElementById('areaGallery');
-            const areaDescription = document.getElementById('areaDescription');
-            const closeModal = document.querySelector('.close-modal');
-            
-            // Add click event to each area item
-            areaItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    const areaId = this.getAttribute('data-area');
-                    openGallery(areaId);
-                });
-            });
-            
-            // Close modal when clicking the close button
-            closeModal.addEventListener('click', function() {
-                closeGallery();
-            });
-            
-            // Close modal when clicking outside the content
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    closeGallery();
-                }
-            });
-            
-            // Function to open gallery with specific area content
-            function openGallery(areaId) {
-                const area = areaData[areaId];
-                
-                if (!area) return;
-                
-                // Set modal title and description
-                modalTitle.textContent = area.title;
-                areaDescription.textContent = area.description;
-                
-                // Clear previous gallery items
-                galleryContainer.innerHTML = '';
-                
-                // Add new gallery items
-                area.images.forEach(imageUrl => {
-                    const galleryItem = document.createElement('div');
-                    galleryItem.className = 'gallery-item';
-                    
-                    const img = document.createElement('img');
-                    img.src = imageUrl;
-                    img.alt = area.title;
-                    
-                    galleryItem.appendChild(img);
-                    galleryContainer.appendChild(galleryItem);
-                });
-                
-                // Show modal
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-            
-            // Function to close gallery
-            function closeGallery() {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-                
-                // Clear gallery after transition
-                setTimeout(() => {
-                    galleryContainer.innerHTML = '';
-                }, 300);
-            }
-            
-            // Close modal with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.classList.contains('active')) {
-                    closeGallery();
-                }
-            });
-        });
-    </script>
 </body>
 </html>
