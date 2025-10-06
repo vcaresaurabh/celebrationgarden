@@ -6,337 +6,398 @@
     <title>Services | Celebration Garden</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+   
     <style>
-        /* Scoped CSS for services section only */
-        .cg-services-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 20px;
-            font-family: 'Montserrat', sans-serif;
-            background: #ffffff;
-        }
-        
-        .cg-services-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .cg-services-subtitle {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
-            font-weight: 500;
-            color: #A4B8A4;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-        }
-        
-        .cg-services-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            color: #2E2E2E;
-            margin-top: 0px;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .cg-services-title::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--color-accent);
-            border-radius: 2px;
-        }
-        
-        .cg-services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .cg-service-card {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cg-service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: #a4b8a4;
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .cg-service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-        }
-        
-        .cg-service-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .cg-service-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 25px;
-            background: linear-gradient(135deg, #f8f9fa, #ffffff);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #A4B8A4;
-            font-size: 2rem;
-            border: 2px solid #f0f0f0;
-            transition: all 0.3s ease;
-        }
-        
-        .cg-service-card:hover .cg-service-icon {
-            background: #a4b8a4;
-            color: #ffffff;
-            border-color: #A4B8A4;
-        }
-        
-        .cg-service-content {
-            color: #2E2E2E;
-        }
-        
-        .cg-service-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #2E2E2E;
-        }
-        
-        .cg-service-details {
-            color: #5d6d7e;
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .cg-service-feature {
-            display: inline-block;
-            background: #f8f9fa;
-            color: #A4B8A4;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid #eaecee;
-        }
-        
-        .cg-capacity-highlight {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-            margin-top: 40px;
-            padding: 30px;
-            background: linear-gradient(135deg, #f8f5f0, #ffffff);
-            border-radius: 12px;
-            border-left: 4px solid #A4B8A4;
-        }
-        
-        .cg-capacity-item {
-            text-align: center;
-        }
-        
-        .cg-capacity-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: #A4B8A4;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-        
-        .cg-capacity-label {
-            font-size: 0.9rem;
-            color: #5d6d7e;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .cg-capacity-divider {
-            width: 1px;
-            height: 50px;
-            background: #eaecee;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .cg-services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                gap: 30px;
-            }
-            
-            .cg-capacity-highlight {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-            }
-            
-            .cg-capacity-divider {
-                width: 100px;
-                height: 1px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .cg-services-section {
-                padding: 60px 15px;
-            }
-            
-            .cg-services-title {
-                font-size: 2.2rem;
-            }
-            
-            .cg-services-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-                margin-top: 40px;
-            }
-            
-            .cg-service-card {
-                padding: 30px 20px;
-            }
-            
-            .cg-capacity-number {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .cg-services-title {
-                font-size: 1.8rem;
-            }
-            
-            .cg-service-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 1.8rem;
-            }
-            
-            .cg-service-name {
-                font-size: 1.2rem;
-            }
-        }
+        /* Why Choose Celebration Garden Section */
+.cg-why-choose-section {
+  margin: 0 auto;
+  padding: 80px 20px;
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(135deg, #f8f5f0 0%, #ffffff 50%, #f8f5f0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cg-why-choose-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.cg-why-choose-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.cg-why-choose-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.cg-why-choose-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, #a4b8a4, #d4a5a5);
+}
+
+.cg-why-choose-subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #5d6d7e;
+  margin-top: 20px;
+}
+
+.cg-why-choose-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* Image Section */
+.cg-why-choose-image {
+  position: relative;
+  padding: 20px;
+}
+
+.cg-image-frame {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 8px solid white;
+}
+
+.cg-image-frame img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Floral Decorations */
+.cg-floral-decoration {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  z-index: 3;
+}
+
+.cg-floral-top-right {
+  top: -20px;
+  right: -20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23a4b8a4' d='M50,10 C60,10 70,15 75,25 C80,35 80,45 75,55 C70,65 60,70 50,70 C40,70 30,65 25,55 C20,45 20,35 25,25 C30,15 40,10 50,10 Z' /%3E%3Cpath fill='%23d4a5a5' d='M30,40 C35,35 45,35 50,40 C55,45 55,55 50,60 C45,65 35,65 30,60 C25,55 25,45 30,40 Z' /%3E%3C/svg%3E");
+}
+
+.cg-floral-bottom-left {
+  bottom: -20px;
+  left: -20px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23d4a5a5' d='M50,10 C60,10 70,15 75,25 C80,35 80,45 75,55 C70,65 60,70 50,70 C40,70 30,65 25,55 C20,45 20,35 25,25 C30,15 40,10 50,10 Z' /%3E%3Cpath fill='%23a4b8a4' d='M30,40 C35,35 45,35 50,40 C55,45 55,55 50,60 C45,65 35,65 30,60 C25,55 25,45 30,40 Z' /%3E%3C/svg%3E");
+  transform: rotate(180deg);
+}
+
+/* Features Section */
+.cg-why-choose-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.cg-feature-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 25px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+  backdrop-filter: blur(5px);
+}
+
+.cg-feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-left-color: #a4b8a4;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.cg-feature-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #a4b8a4, #8da98d);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.cg-feature-item:hover .cg-feature-icon {
+  background: linear-gradient(135deg, #d4a5a5, #c29595);
+  transform: scale(1.1);
+}
+
+.cg-feature-text h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  color: #2e2e2e;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* CTA Button */
+.cg-why-choose-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cg-cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #a4b8a4, #8da98d);
+  color: #fff;
+  padding: 14px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(164, 184, 164, 0.3);
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cg-cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.5s;
+}
+
+.cg-cta-button:hover::before {
+  left: 100%;
+}
+
+.cg-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(164, 184, 164, 0.4);
+  background: linear-gradient(135deg, #8da98d, #a4b8a4);
+}
+
+/* Background Floral Elements */
+.cg-floral-bg {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.cg-floral-bg-1 {
+  top: 10%;
+  left: 5%;
+  width: 150px;
+  height: 150px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23a4b8a4' d='M50,10 C60,10 70,15 75,25 C80,35 80,45 75,55 C70,65 60,70 50,70 C40,70 30,65 25,55 C20,45 20,35 25,25 C30,15 40,10 50,10 Z' /%3E%3Cpath fill='%23d4a5a5' d='M30,40 C35,35 45,35 50,40 C55,45 55,55 50,60 C45,65 35,65 30,60 C25,55 25,45 30,40 Z' /%3E%3C/svg%3E");
+}
+
+.cg-floral-bg-2 {
+  top: 60%;
+  right: 8%;
+  width: 120px;
+  height: 120px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23d4a5a5' d='M50,10 C60,10 70,15 75,25 C80,35 80,45 75,55 C70,65 60,70 50,70 C40,70 30,65 25,55 C20,45 20,35 25,25 C30,15 40,10 50,10 Z' /%3E%3Cpath fill='%23a4b8a4' d='M30,40 C35,35 45,35 50,40 C55,45 55,55 50,60 C45,65 35,65 30,60 C25,55 25,45 30,40 Z' /%3E%3C/svg%3E");
+  transform: rotate(45deg);
+}
+
+.cg-floral-bg-3 {
+  bottom: 15%;
+  left: 15%;
+  width: 100px;
+  height: 100px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%23a4b8a4' d='M50,10 C60,10 70,15 75,25 C80,35 80,45 75,55 C70,65 60,70 50,70 C40,70 30,65 25,55 C20,45 20,35 25,25 C30,15 40,10 50,10 Z' /%3E%3Cpath fill='%23d4a5a5' d='M30,40 C35,35 45,35 50,40 C55,45 55,55 50,60 C45,65 35,65 30,60 C25,55 25,45 30,40 Z' /%3E%3C/svg%3E");
+  transform: rotate(-30deg);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .cg-why-choose-content {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cg-why-choose-section {
+    padding: 60px 15px;
+  }
+
+  .cg-why-choose-title {
+    font-size: 2.2rem;
+  }
+
+  .cg-why-choose-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .cg-why-choose-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cg-why-choose-image {
+    order: 2;
+  }
+
+  .cg-why-choose-features {
+    order: 1;
+  }
+
+  .cg-image-frame img {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cg-why-choose-title {
+    font-size: 1.8rem;
+  }
+
+  .cg-why-choose-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .cg-feature-item {
+    padding: 15px 20px;
+  }
+
+  .cg-feature-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+    margin-right: 15px;
+  }
+
+  .cg-feature-text h4 {
+    font-size: 1rem;
+  }
+
+  .cg-cta-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
     </style>
 </head>
 <body>
-    <!-- Services Section -->
-    <section class="cg-services-section">
-        <div class="cg-services-header">
-            <p class="cg-services-subtitle">Premium Amenities</p>
-            <h2 class="cg-services-title">Services Offered By Us</h2>
+   <!-- Why Choose Celebration Garden Section -->
+<section class="cg-why-choose-section">
+  <div class="cg-why-choose-container">
+    <div class="cg-why-choose-header">
+      <h2 class="cg-why-choose-title">Why Choose Celebration Garden?</h2>
+      <p class="cg-why-choose-subtitle">Experience perfection in every detail</p>
+    </div>
+
+    <div class="cg-why-choose-content">
+      <div class="cg-why-choose-image">
+        <div class="cg-image-frame">
+          <img src="YOUR_IMAGE_URL_HERE" alt="Celebration Garden Venue" />
+          <div class="cg-floral-decoration cg-floral-top-right"></div>
+          <div class="cg-floral-decoration cg-floral-bottom-left"></div>
         </div>
-        
-        <div class="cg-capacity-highlight">
-            <div class="cg-capacity-item">
-                <div class="cg-capacity-number">12,000</div>
-                <div class="cg-capacity-label">Sq. Ft. Party Lawn</div>
-            </div>
-            
-            <div class="cg-capacity-divider"></div>
-            
-            <div class="cg-capacity-item">
-                <div class="cg-capacity-number">200</div>
-                <div class="cg-capacity-label">Car Parking Facility</div>
-            </div>
+      </div>
+
+      <div class="cg-why-choose-features">
+        <div class="cg-feature-item">
+          <div class="cg-feature-icon">
+            <i class="fas fa-subway"></i>
+          </div>
+          <div class="cg-feature-text">
+            <h4>Walking distance from metro station</h4>
+          </div>
         </div>
-        
-        <div class="cg-services-grid">
-            <!-- Water Supply -->
-            <div class="cg-service-card">
-                <div class="cg-service-icon">
-                    <i class="fas fa-faucet"></i>
-                </div>
-                <div class="cg-service-content">
-                    <h3 class="cg-service-name">Premium Water Supply</h3>
-                    <p class="cg-service-details">Dedicated water supply facility for kitchen and venue needs, ensuring seamless operations throughout your event.</p>
-                    <span class="cg-service-feature">Kitchen Ready</span>
-                </div>
-            </div>
-            
-            <!-- Women's Hall -->
-            <div class="cg-service-card">
-                <div class="cg-service-icon">
-                    <i class="fas fa-female"></i>
-                </div>
-                <div class="cg-service-content">
-                    <h3 class="cg-service-name">Exclusive Women's Hall</h3>
-                    <p class="cg-service-details">A dedicated, comfortable space designed specifically for women guests, ensuring privacy and convenience.</p>
-                    <span class="cg-service-feature">Private Space</span>
-                </div>
-            </div>
-            
-            <!-- Air Conditioned Hall -->
-            <div class="cg-service-card">
-                <div class="cg-service-icon">
-                    <i class="fas fa-snowflake"></i>
-                </div>
-                <div class="cg-service-content">
-                    <h3 class="cg-service-name">Air Conditioned Halls</h3>
-                    <p class="cg-service-details">Fully climate-controlled venues providing optimal comfort regardless of weather conditions outside.</p>
-                    <span class="cg-service-feature">Climate Control</span>
-                </div>
-            </div>
-            
-            <!-- Parking Security -->
-            <div class="cg-service-card">
-                <div class="cg-service-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="cg-service-content">
-                    <h3 class="cg-service-name">Professional Parking Security</h3>
-                    <p class="cg-service-details">Trained parking guards ensuring the safety and security of all vehicles throughout your event duration.</p>
-                    <span class="cg-service-feature">24/7 Security</span>
-                </div>
-            </div>
-            
-            <!-- Kitchen Area -->
-            <div class="cg-service-card">
-                <div class="cg-service-icon">
-                    <i class="fas fa-utensils"></i>
-                </div>
-                <div class="cg-service-content">
-                    <h3 class="cg-service-name">Professional Kitchen Facility</h3>
-                    <p class="cg-service-details">Fully equipped kitchen area with modern amenities for efficient food preparation and catering services.</p>
-                    <span class="cg-service-feature">Fully Equipped</span>
-                </div>
-            </div>
-            
-            <!-- Event Support -->
-            <div class="cg-service-card">
-                <div class="cg-service-icon">
-                    <i class="fas fa-concierge-bell"></i>
-                </div>
-                <div class="cg-service-content">
-                    <h3 class="cg-service-name">Comprehensive Event Support</h3>
-                    <p class="cg-service-details">Dedicated staff and support services to ensure every aspect of your event runs smoothly and efficiently.</p>
-                    <span class="cg-service-feature">Full Support</span>
-                </div>
-            </div>
+
+        <div class="cg-feature-item">
+          <div class="cg-feature-icon">
+            <i class="fas fa-parking"></i>
+          </div>
+          <div class="cg-feature-text">
+            <h4>Free parking space</h4>
+          </div>
         </div>
-    </section>
+
+        <div class="cg-feature-item">
+          <div class="cg-feature-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <div class="cg-feature-text">
+            <h4>Custom decoration</h4>
+          </div>
+        </div>
+
+        <div class="cg-feature-item">
+          <div class="cg-feature-icon">
+            <i class="fas fa-utensils"></i>
+          </div>
+          <div class="cg-feature-text">
+            <h4>Large Kitchen</h4>
+          </div>
+        </div>
+
+        <div class="cg-feature-item">
+          <div class="cg-feature-icon">
+            <i class="fas fa-users"></i>
+          </div>
+          <div class="cg-feature-text">
+            <h4>1000+ People capacity</h4>
+          </div>
+        </div>
+
+        <div class="cg-feature-item">
+          <div class="cg-feature-icon">
+            <i class="fas fa-user-tie"></i>
+          </div>
+          <div class="cg-feature-text">
+            <h4>Skilled Staff</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cg-why-choose-cta">
+      <a href="#" class="cg-cta-button">View Services</a>
+    </div>
+  </div>
+
+  <!-- Background Floral Elements -->
+  <div class="cg-floral-bg cg-floral-bg-1"></div>
+  <div class="cg-floral-bg cg-floral-bg-2"></div>
+  <div class="cg-floral-bg cg-floral-bg-3"></div>
+</section>
 </body>
 </html>

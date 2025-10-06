@@ -1,762 +1,1372 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - Celebration Garden</title>
     <!-- Preconnect to Google fonts for faster font loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Google Fonts (load early) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap"
-        rel="stylesheet">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500&family=Cormorant+Garamond:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <!-- Preload main stylesheet to prioritize CSS -->
-    <link rel="preload" href="assets/css/styles.css" as="style">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preload" href="assets/css/styles.css" as="style" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <!-- Optional library stylesheet -->
-    <link rel="preload" href="assets/css/library.css" as="style">
-    <link rel="stylesheet" href="assets/css/library.css">
-</head>
+    <link rel="preload" href="assets/css/library.css" as="style" />
+    <link rel="stylesheet" href="assets/css/library.css" />
+  </head>
 
-<body>
+  <body>
     <div id="header"></div>
     <!-- Hero Section -->
     <section class="hero-slider">
-
-        <!-- Slide 1 -->
-        <div class="slide video-slide active">
-            <div class="video-container">
-                <video autoplay muted loop playsinline>
-                    <source src="https://www.pexels.com/download/video/32237905/" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="video-overlay"></div>
-            </div>
-            <div class="slide-content">
-                <h1 class="slide-title">A Day to Remember</h1>
-                <p class="slide-subtitle">Experience the magic of your special day in our breathtaking venues, captured
-                    forever in beautiful memories.</p>
-                <a href="#" class="btn">Schedule a Visit</a>
-            </div>
+      <!-- Slide 1 -->
+      <div class="slide video-slide active">
+        <div class="video-container">
+          <video autoplay muted loop playsinline>
+            <source
+              src="https://www.pexels.com/download/video/32237905/"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay"></div>
         </div>
-
-
-        <!-- Slide 2 -->
-        <div class="slide"
-            style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-            <div class="slide-content">
-                <h1 class="slide-title">Elegant Wedding Celebrations</h1>
-                <p class="slide-subtitle">Create unforgettable memories in our beautifully designed venues, perfect for
-                    your special day.</p>
-                <a href="#" class="btn">Explore Venues</a>
-            </div>
+        <div class="slide-content">
+          <h1 class="slide-title">A Day to Remember</h1>
+          <p class="slide-subtitle">
+            Experience the magic of your special day in our breathtaking venues,
+            captured forever in beautiful memories.
+          </p>
+          <a href="#" class="btn">Schedule a Visit</a>
         </div>
+      </div>
 
-        <!-- Slide 3 -->
-        <div class="slide"
-            style="background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-            <div class="slide-content">
-                <h1 class="slide-title">Exquisite Culinary Experience</h1>
-                <p class="slide-subtitle">Our master chefs create delightful menus tailored to your preferences and
-                    theme.</p>
-                <a href="#" class="btn">View Menus</a>
-            </div>
+      <!-- Slide 2 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1 class="slide-title">Elegant Wedding Celebrations</h1>
+          <p class="slide-subtitle">
+            Create unforgettable memories in our beautifully designed venues,
+            perfect for your special day.
+          </p>
+          <a href="#" class="btn">Explore Venues</a>
         </div>
+      </div>
 
-        <!-- Slide 4 -->
-        <div class="slide"
-            style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
-            <div class="slide-content">
-                <h1 class="slide-title">Memorable Moments</h1>
-                <p class="slide-subtitle">From intimate gatherings to grand celebrations, we help create moments that
-                    last a lifetime.</p>
-                <a href="#" class="btn">View Gallery</a>
-            </div>
+      <!-- Slide 3 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1 class="slide-title">Exquisite Culinary Experience</h1>
+          <p class="slide-subtitle">
+            Our master chefs create delightful menus tailored to your
+            preferences and theme.
+          </p>
+          <a href="#" class="btn">View Menus</a>
         </div>
+      </div>
 
-
-        <!-- Navigation Dots -->
-        <div class="slider-nav">
-            <div class="slider-dot active" data-slide="0"></div>
-            <div class="slider-dot" data-slide="1"></div>
-            <div class="slider-dot" data-slide="2"></div>
-            <div class="slider-dot" data-slide="3"></div>
+      <!-- Slide 4 -->
+      <div
+        class="slide"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+        "
+      >
+        <div class="slide-content">
+          <h1 class="slide-title">Memorable Moments</h1>
+          <p class="slide-subtitle">
+            From intimate gatherings to grand celebrations, we help create
+            moments that last a lifetime.
+          </p>
+          <a href="#" class="btn">View Gallery</a>
         </div>
+      </div>
 
-        <!-- Navigation Arrows -->
-        <div class="slider-arrows">
-            <div class="arrow prev"><i class="fas fa-chevron-left"></i></div>
-            <div class="arrow next"><i class="fas fa-chevron-right"></i></div>
-        </div>
+      <!-- Navigation Dots -->
+      <div class="slider-nav">
+        <div class="slider-dot active" data-slide="0"></div>
+        <div class="slider-dot" data-slide="1"></div>
+        <div class="slider-dot" data-slide="2"></div>
+        <div class="slider-dot" data-slide="3"></div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <div class="slider-arrows">
+        <div class="arrow prev"><i class="fas fa-chevron-left"></i></div>
+        <div class="arrow next"><i class="fas fa-chevron-right"></i></div>
+      </div>
     </section>
     <!-- Hero Section -->
 
-
     <!-- Our Celebrations Section -->
     <section class="cg-celebrations-section">
-        <div class="cg-section-header">
-            <h2 class="cg-section-title">Where Celebrations Come Together</h2>
-            <p class="cg-section-subtitle">At Celebration Garden, we believe every milestone deserves a setting that is
-                equally memorable. Nestled in the heart of Kalindi Kunj, our venue is a sanctuary where life's most
-                cherished moments are gracefully brought to life.</p>
+      <div class="cg-section-header">
+        <h2 class="cg-section-title">Where Celebrations Come Together</h2>
+        <p class="cg-section-subtitle">
+          At Celebration Garden, we believe every milestone deserves a setting
+          that is equally memorable. Nestled in the heart of Kalindi Kunj, our
+          venue is a sanctuary where life's most cherished moments are
+          gracefully brought to life.
+        </p>
+      </div>
+
+      <div class="cg-events-grid">
+        <!-- Engagement Ceremonies -->
+        <div class="cg-event-card">
+          <div
+            class="cg-event-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          >
+            <div class="cg-event-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+          </div>
+          <div class="cg-event-content">
+            <h3 class="cg-event-title">Engagement Ceremonies</h3>
+            <h4 class="cg-event-subtitle">Where Your Forever Begins</h4>
+            <p class="cg-event-description">
+              Begin your journey of love amidst the blossoming beauty of
+              Celebration Garden. Our enchanting garden provides an idyllic
+              backdrop for your engagement, where promises are made under the
+              open sky.
+            </p>
+            <div class="cg-event-features">
+              <span class="cg-feature-tag">Garden Setting</span>
+              <span class="cg-feature-tag">Intimate Atmosphere</span>
+              <span class="cg-feature-tag">Custom Decor</span>
+            </div>
+          </div>
         </div>
 
-        <div class="cg-events-grid">
-            <!-- Engagement Ceremonies -->
-            <div class="cg-event-card">
-                <div class="cg-event-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                    <div class="cg-event-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                </div>
-                <div class="cg-event-content">
-                    <h3 class="cg-event-title">Engagement Ceremonies</h3>
-                    <h4 class="cg-event-subtitle">Where Your Forever Begins</h4>
-                    <p class="cg-event-description">Begin your journey of love amidst the blossoming beauty of
-                        Celebration Garden. Our enchanting garden provides an idyllic backdrop for your engagement,
-                        where promises are made under the open sky.</p>
-                    <div class="cg-event-features">
-                        <span class="cg-feature-tag">Garden Setting</span>
-                        <span class="cg-feature-tag">Intimate Atmosphere</span>
-                        <span class="cg-feature-tag">Custom Decor</span>
-                    </div>
-                </div>
+        <!-- Wedding Celebrations -->
+        <div class="cg-event-card">
+          <div
+            class="cg-event-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          >
+            <div class="cg-event-icon">
+              <i class="fas fa-ring"></i>
             </div>
-
-            <!-- Wedding Celebrations -->
-            <div class="cg-event-card">
-                <div class="cg-event-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                    <div class="cg-event-icon">
-                        <i class="fas fa-ring"></i>
-                    </div>
-                </div>
-                <div class="cg-event-content">
-                    <h3 class="cg-event-title">Wedding Celebrations</h3>
-                    <h4 class="cg-event-subtitle">A Day of Timeless Romance</h4>
-                    <p class="cg-event-description">Exchange your vows in a setting of unparalleled romance. Our
-                        stunning venue, harmoniously blending natural splendor with sophisticated amenities, sets the
-                        stage for the wedding of your dreams.</p>
-                    <div class="cg-event-features">
-                        <span class="cg-feature-tag">Grand Ballroom</span>
-                        <span class="cg-feature-tag">Garden Pavilion</span>
-                        <span class="cg-feature-tag">Royal Terrace</span>
-                    </div>
-                </div>
+          </div>
+          <div class="cg-event-content">
+            <h3 class="cg-event-title">Wedding Celebrations</h3>
+            <h4 class="cg-event-subtitle">A Day of Timeless Romance</h4>
+            <p class="cg-event-description">
+              Exchange your vows in a setting of unparalleled romance. Our
+              stunning venue, harmoniously blending natural splendor with
+              sophisticated amenities, sets the stage for the wedding of your
+              dreams.
+            </p>
+            <div class="cg-event-features">
+              <span class="cg-feature-tag">Grand Ballroom</span>
+              <span class="cg-feature-tag">Garden Pavilion</span>
+              <span class="cg-feature-tag">Royal Terrace</span>
             </div>
-
-            <!-- Birthday Celebrations -->
-            <div class="cg-event-card">
-                <div class="cg-event-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                    <div class="cg-event-icon">
-                        <i class="fas fa-birthday-cake"></i>
-                    </div>
-                </div>
-                <div class="cg-event-content">
-                    <h3 class="cg-event-title">Birthday Celebrations</h3>
-                    <h4 class="cg-event-subtitle">Celebrate a Milestone, Create a Memory</h4>
-                    <p class="cg-event-description">Mark your special day with joy and style at Celebration Garden.
-                        Whether an intimate gathering or a grand party, our venue resonates with laughter and
-                        celebration.</p>
-                    <div class="cg-event-features">
-                        <span class="cg-feature-tag">Custom Themes</span>
-                        <span class="cg-feature-tag">Entertainment Options</span>
-                        <span class="cg-feature-tag">Specialty Cakes</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Reception Parties -->
-            <div class="cg-event-card">
-                <div class="cg-event-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1549451372-2d6d7b5f1a9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                    <div class="cg-event-icon">
-                        <i class="fas fa-glass-cheers"></i>
-                    </div>
-                </div>
-                <div class="cg-event-content">
-                    <h3 class="cg-event-title">Reception Parties</h3>
-                    <h4 class="cg-event-subtitle">An Elegant Celebration of New Beginnings</h4>
-                    <p class="cg-event-description">Continue the festivities in an atmosphere of refined charm.
-                        Celebration Garden offers the ideal setting for your reception party, where comfort meets
-                        elegance.</p>
-                    <div class="cg-event-features">
-                        <span class="cg-feature-tag">Premium Bar</span>
-                        <span class="cg-feature-tag">Dance Floor</span>
-                        <span class="cg-feature-tag">Gourmet Dining</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Corporate Events -->
-            <div class="cg-event-card">
-                <div class="cg-event-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                    <div class="cg-event-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                </div>
-                <div class="cg-event-content">
-                    <h3 class="cg-event-title">Corporate Events</h3>
-                    <h4 class="cg-event-subtitle">Where Professionalism Meets Inspiration</h4>
-                    <p class="cg-event-description">Elevate your next corporate gathering beyond the ordinary.
-                        Celebration Garden provides a sophisticated and conducive environment for meetings and office
-                        parties.</p>
-                    <div class="cg-event-features">
-                        <span class="cg-feature-tag">AV Equipment</span>
-                        <span class="cg-feature-tag">Conference Setup</span>
-                        <span class="cg-feature-tag">Networking Areas</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Special & Social Gatherings -->
-            <div class="cg-event-card">
-                <div class="cg-event-image"
-                    style="background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                    <div class="cg-event-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                </div>
-                <div class="cg-event-content">
-                    <h3 class="cg-event-title">Special & Social Gatherings</h3>
-                    <h4 class="cg-event-subtitle">Life's Moments, Magnified</h4>
-                    <p class="cg-event-description">From festive kitty parties and anniversaries to heartfelt reunions,
-                        every occasion holds its own magic. Our versatile space is designed to adapt to your vision.</p>
-                    <div class="cg-event-features">
-                        <span class="cg-feature-tag">Versatile Spaces</span>
-                        <span class="cg-feature-tag">Customizable Layouts</span>
-                        <span class="cg-feature-tag">Intimate Settings</span>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
 
-        <div class="cg-section-footer">
-            <p class="cg-closing-statement">No matter the occasion, Celebration Garden is your premier partner in
-                crafting exceptional events. Our dedicated team is committed to bringing your vision to life with
-                precision and grace.</p>
-            <a href="#contact" class="cta-button">Ready to create an unforgettable experience?</a>
+        <!-- Birthday Celebrations -->
+        <div class="cg-event-card">
+          <div
+            class="cg-event-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          >
+            <div class="cg-event-icon">
+              <i class="fas fa-birthday-cake"></i>
+            </div>
+          </div>
+          <div class="cg-event-content">
+            <h3 class="cg-event-title">Birthday Celebrations</h3>
+            <h4 class="cg-event-subtitle">
+              Celebrate a Milestone, Create a Memory
+            </h4>
+            <p class="cg-event-description">
+              Mark your special day with joy and style at Celebration Garden.
+              Whether an intimate gathering or a grand party, our venue
+              resonates with laughter and celebration.
+            </p>
+            <div class="cg-event-features">
+              <span class="cg-feature-tag">Custom Themes</span>
+              <span class="cg-feature-tag">Entertainment Options</span>
+              <span class="cg-feature-tag">Specialty Cakes</span>
+            </div>
+          </div>
         </div>
+
+        <!-- Reception Parties -->
+        <div class="cg-event-card">
+          <div
+            class="cg-event-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1549451372-2d6d7b5f1a9f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          >
+            <div class="cg-event-icon">
+              <i class="fas fa-glass-cheers"></i>
+            </div>
+          </div>
+          <div class="cg-event-content">
+            <h3 class="cg-event-title">Reception Parties</h3>
+            <h4 class="cg-event-subtitle">
+              An Elegant Celebration of New Beginnings
+            </h4>
+            <p class="cg-event-description">
+              Continue the festivities in an atmosphere of refined charm.
+              Celebration Garden offers the ideal setting for your reception
+              party, where comfort meets elegance.
+            </p>
+            <div class="cg-event-features">
+              <span class="cg-feature-tag">Premium Bar</span>
+              <span class="cg-feature-tag">Dance Floor</span>
+              <span class="cg-feature-tag">Gourmet Dining</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate Events -->
+        <div class="cg-event-card">
+          <div
+            class="cg-event-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          >
+            <div class="cg-event-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+          </div>
+          <div class="cg-event-content">
+            <h3 class="cg-event-title">Corporate Events</h3>
+            <h4 class="cg-event-subtitle">
+              Where Professionalism Meets Inspiration
+            </h4>
+            <p class="cg-event-description">
+              Elevate your next corporate gathering beyond the ordinary.
+              Celebration Garden provides a sophisticated and conducive
+              environment for meetings and office parties.
+            </p>
+            <div class="cg-event-features">
+              <span class="cg-feature-tag">AV Equipment</span>
+              <span class="cg-feature-tag">Conference Setup</span>
+              <span class="cg-feature-tag">Networking Areas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Special & Social Gatherings -->
+        <div class="cg-event-card">
+          <div
+            class="cg-event-image"
+            style="
+              background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            "
+          >
+            <div class="cg-event-icon">
+              <i class="fas fa-users"></i>
+            </div>
+          </div>
+          <div class="cg-event-content">
+            <h3 class="cg-event-title">Special & Social Gatherings</h3>
+            <h4 class="cg-event-subtitle">Life's Moments, Magnified</h4>
+            <p class="cg-event-description">
+              From festive kitty parties and anniversaries to heartfelt
+              reunions, every occasion holds its own magic. Our versatile space
+              is designed to adapt to your vision.
+            </p>
+            <div class="cg-event-features">
+              <span class="cg-feature-tag">Versatile Spaces</span>
+              <span class="cg-feature-tag">Customizable Layouts</span>
+              <span class="cg-feature-tag">Intimate Settings</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cg-section-footer">
+        <p class="cg-closing-statement">
+          No matter the occasion, Celebration Garden is your premier partner in
+          crafting exceptional events. Our dedicated team is committed to
+          bringing your vision to life with precision and grace.
+        </p>
+        <a href="#contact" class="cta-button"
+          >Ready to create an unforgettable experience?</a
+        >
+      </div>
     </section>
     <!-- Our Celebrations Section -->
-
 
     <!-- Venue Gallery Section -->
     <section class="venue-gallery-section">
-        <div class="venue-gallery-container">
-            <h2 class="section-title">Venue Areas & Facilities</h2>
+      <div class="venue-gallery-container">
+        <h2 class="section-title">Venue Areas & Facilities</h2>
 
-            <div class="areas-grid">
-                <div class="area-item" data-area="lawn">
-                    <div class="area-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Lawn Area</h4>
-                        <p>Beautiful outdoor space for ceremonies</p>
-                    </div>
-                </div>
-
-                <div class="area-item" data-area="entrance">
-                    <div class="area-icon">
-                        <i class="fas fa-door-open"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Grand Entrance</h4>
-                        <p>Elegant welcome area with floral arrangements</p>
-                    </div>
-                </div>
-
-                <div class="area-item" data-area="dining">
-                    <div class="area-icon">
-                        <i class="fas fa-utensils"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Dining Area</h4>
-                        <p>Spacious seating with customizable layouts</p>
-                    </div>
-                </div>
-
-                <div class="area-item" data-area="dance">
-                    <div class="area-icon">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Dance Floor</h4>
-                        <p>Custom illuminated dance floor area</p>
-                    </div>
-                </div>
-
-                <div class="area-item" data-area="lounge">
-                    <div class="area-icon">
-                        <i class="fas fa-couch"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Lounge Section</h4>
-                        <p>Comfortable seating for casual conversations</p>
-                    </div>
-                </div>
-
-                <div class="area-item" data-area="bar">
-                    <div class="area-icon">
-                        <i class="fas fa-glass-cheers"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Bar Counter</h4>
-                        <p>Elegantly designed bar with premium service</p>
-                    </div>
-                </div>
-
-                <div class="area-item" data-area="photoshoot">
-                    <div class="area-icon">
-                        <i class="fas fa-camera"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Photoshoot Area</h4>
-                        <p>Beautifully designed spaces for capturing special moments</p>
-                    </div>
-                </div>
-
-                <div class="area-item" data-area="coffee">
-                    <div class="area-icon">
-                        <i class="fas fa-coffee"></i>
-                    </div>
-                    <div class="area-info">
-                        <h4>Coffee Bar</h4>
-                        <p>Premium coffee and refreshments station for your guests</p>
-                    </div>
-                </div>
+        <div class="areas-grid">
+          <div class="area-item" data-area="lawn">
+            <div class="area-icon">
+              <i class="fas fa-leaf"></i>
             </div>
-        </div>
-
-        <!-- Modal for displaying area images -->
-        <div class="modal" id="galleryModal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title" id="modalAreaTitle">Area Title</h3>
-                    <button class="close-modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div class="gallery-container" id="areaGallery">
-                        <!-- Gallery items will be inserted here by JavaScript -->
-                    </div>
-                    <div class="modal-description" id="areaDescription">
-                        <!-- Description will be inserted here by JavaScript -->
-                    </div>
-                </div>
+            <div class="area-info">
+              <h4>Lawn Area</h4>
+              <p>Beautiful outdoor space for ceremonies</p>
             </div>
+          </div>
+
+          <div class="area-item" data-area="entrance">
+            <div class="area-icon">
+              <i class="fas fa-door-open"></i>
+            </div>
+            <div class="area-info">
+              <h4>Grand Entrance</h4>
+              <p>Elegant welcome area with floral arrangements</p>
+            </div>
+          </div>
+
+          <div class="area-item" data-area="dining">
+            <div class="area-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div class="area-info">
+              <h4>Dining Area</h4>
+              <p>Spacious seating with customizable layouts</p>
+            </div>
+          </div>
+
+          <div class="area-item" data-area="dance">
+            <div class="area-icon">
+              <i class="fas fa-music"></i>
+            </div>
+            <div class="area-info">
+              <h4>Dance Floor</h4>
+              <p>Custom illuminated dance floor area</p>
+            </div>
+          </div>
+
+          <div class="area-item" data-area="lounge">
+            <div class="area-icon">
+              <i class="fas fa-couch"></i>
+            </div>
+            <div class="area-info">
+              <h4>Lounge Section</h4>
+              <p>Comfortable seating for casual conversations</p>
+            </div>
+          </div>
+
+          <div class="area-item" data-area="bar">
+            <div class="area-icon">
+              <i class="fas fa-glass-cheers"></i>
+            </div>
+            <div class="area-info">
+              <h4>Bar Counter</h4>
+              <p>Elegantly designed bar with premium service</p>
+            </div>
+          </div>
+
+          <div class="area-item" data-area="photoshoot">
+            <div class="area-icon">
+              <i class="fas fa-camera"></i>
+            </div>
+            <div class="area-info">
+              <h4>Photoshoot Area</h4>
+              <p>Beautifully designed spaces for capturing special moments</p>
+            </div>
+          </div>
+
+          <div class="area-item" data-area="coffee">
+            <div class="area-icon">
+              <i class="fas fa-coffee"></i>
+            </div>
+            <div class="area-info">
+              <h4>Coffee Bar</h4>
+              <p>Premium coffee and refreshments station for your guests</p>
+            </div>
+          </div>
         </div>
+      </div>
+
+      <!-- Modal for displaying area images -->
+      <div class="modal" id="galleryModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="modalAreaTitle">Area Title</h3>
+            <button class="close-modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div class="gallery-container" id="areaGallery">
+              <!-- Gallery items will be inserted here by JavaScript -->
+            </div>
+            <div class="modal-description" id="areaDescription">
+              <!-- Description will be inserted here by JavaScript -->
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- Venue Gallery Section -->
 
-
     <!-- About Us Section -->
     <section class="cg-about-section">
-        <div class="cg-about-header">
-            <p class="cg-about-subtitle">Best Banquet Hall in Delhi</p>
-            <h2 class="cg-about-title">About Celebration Garden</h2>
-            <p class="cg-about-tagline">Enjoy every moment with Celebration Garden</p>
+      <div class="cg-about-header">
+        <p class="cg-about-subtitle">Best Banquet Hall in Delhi</p>
+        <h2 class="cg-about-title">About Celebration Garden</h2>
+        <p class="cg-about-tagline">
+          Enjoy every moment with Celebration Garden
+        </p>
+      </div>
+
+      <div class="cg-about-content">
+        <div class="cg-about-text">
+          <p class="cg-about-description">
+            Celebration Garden Banquet Hall, situated in the prime location of
+            Kalindi Kunj, Delhi, is the premier choice for hosting life's most
+            cherished moments. Our venue masterfully blends sophisticated indoor
+            spaces with breathtaking outdoor settings.
+          </p>
+
+          <p class="cg-about-description">
+            This wedding hall is special because it's designed to make everyone
+            happy. It mixes indoor and outdoor spaces perfectly, so you can
+            enjoy nature and modern design while celebrating.
+          </p>
+
+          <div class="cg-minimal-divider"></div>
+
+          <div class="cg-about-highlights">
+            <div class="cg-highlight-item">
+              <div class="cg-highlight-icon">
+                <i class="fas fa-check"></i>
+              </div>
+              <p class="cg-highlight-text">Prime location in Kalindi Kunj</p>
+            </div>
+            <div class="cg-highlight-item">
+              <div class="cg-highlight-icon">
+                <i class="fas fa-check"></i>
+              </div>
+              <p class="cg-highlight-text">Indoor and outdoor spaces</p>
+            </div>
+            <div class="cg-highlight-item">
+              <div class="cg-highlight-icon">
+                <i class="fas fa-check"></i>
+              </div>
+              <p class="cg-highlight-text">
+                Modern amenities with elegant design
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="cg-about-content">
-            <div class="cg-about-text">
-                <p class="cg-about-description">
-                    Celebration Garden Banquet Hall, situated in the prime location of Kalindi Kunj, Delhi,
-                    is the premier choice for hosting life's most cherished moments. Our venue masterfully
-                    blends sophisticated indoor spaces with breathtaking outdoor settings.
-                </p>
-
-                <p class="cg-about-description">
-                    This wedding hall is special because it's designed to make everyone happy. It mixes indoor
-                    and outdoor spaces perfectly, so you can enjoy nature and modern design while celebrating.
-                </p>
-
-                <div class="cg-minimal-divider"></div>
-
-                <div class="cg-about-highlights">
-                    <div class="cg-highlight-item">
-                        <div class="cg-highlight-icon">
-                            <i class="fas fa-check"></i>
-                        </div>
-                        <p class="cg-highlight-text">Prime location in Kalindi Kunj</p>
-                    </div>
-                    <div class="cg-highlight-item">
-                        <div class="cg-highlight-icon">
-                            <i class="fas fa-check"></i>
-                        </div>
-                        <p class="cg-highlight-text">Indoor and outdoor spaces</p>
-                    </div>
-                    <div class="cg-highlight-item">
-                        <div class="cg-highlight-icon">
-                            <i class="fas fa-check"></i>
-                        </div>
-                        <p class="cg-highlight-text">Modern amenities with elegant design</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="cg-about-image">
-                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    alt="Celebration Garden Banquet Hall">
-            </div>
+        <div class="cg-about-image">
+          <img
+            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Celebration Garden Banquet Hall"
+          />
         </div>
+      </div>
 
-        <div class="cg-about-cta">
-            <p class="cg-cta-text">You are just one call away from planning your dream event.</p>
-            <p class="cg-cta-text">Let's make it happen</p>
+      <div class="cg-about-cta">
+        <p class="cg-cta-text">
+          You are just one call away from planning your dream event.
+        </p>
+        <p class="cg-cta-text">Let's make it happen</p>
 
-            <a href="tel:+918000013333" class="cta-button">
+        <!-- <a href="tel:+918000013333" class="cta-button">
                 <i class="fas fa-phone"></i> Call Us Anytime +91 8000013333
-            </a>
+            </a> -->
 
-            <div class="cg-contact-info">
-                <div class="cg-contact-icon">
-                    <i class="fas fa-phone-alt"></i>
-                </div>
-                <div class="cg-contact-details">
-                    <h4>Ready to Plan Your Event?</h4>
-                    <p>+91 8000013333</p>
-                </div>
-            </div>
+        <div class="cg-contact-info">
+          <div class="cg-contact-icon">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="cg-contact-details">
+            <h4>Ready to Plan Your Event?</h4>
+            <p>+91 8000013333</p>
+          </div>
         </div>
+      </div>
     </section>
     <!-- About Section -->
 
+    <!-- Services Offered Section -->
+    <section class="venue-gallery-section cg-services-offered">
+      <div class="venue-gallery-container">
+        <h2 class="section-title">Services Offered By Us</h2>
+        <p class="cg-services-subtitle">
+          Thoughtfully curated amenities to make every celebration effortless,
+          elegant, and unforgettable.
+        </p>
+
+        <div class="areas-grid">
+          <div class="area-item">
+            <div class="area-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="area-info">
+              <h4>Party Hall For Women</h4>
+              <p>
+                Exclusive hall designed for intimate celebrations and
+                gatherings.
+              </p>
+            </div>
+          </div>
+
+          <div class="area-item">
+            <div class="area-icon">
+              <i class="fas fa-tree"></i>
+            </div>
+            <div class="area-info">
+              <h4>Party Lawn (12000 Sq. Ft.)</h4>
+              <p>Sprawling green open space perfect for grand receptions.</p>
+            </div>
+          </div>
+
+          <div class="area-item">
+            <div class="area-icon">
+              <i class="fas fa-wind"></i>
+            </div>
+            <div class="area-info">
+              <h4>Air Conditioned Hall</h4>
+              <p>Comfortable indoor environment ideal for any weather.</p>
+            </div>
+          </div>
+
+          <div class="area-item">
+            <div class="area-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <div class="area-info">
+              <h4>Parking For 200 Cars with Guards</h4>
+              <p>
+                Secure and managed parking area for your guests’ convenience.
+              </p>
+            </div>
+          </div>
+
+          <div class="area-item">
+            <div class="area-icon">
+              <i class="fas fa-tint"></i>
+            </div>
+            <div class="area-info">
+              <h4>Water Supply For Kitchen</h4>
+              <p>Reliable and hygienic water source for catering facilities.</p>
+            </div>
+          </div>
+
+          <div class="area-item">
+            <div class="area-icon">
+              <i class="fas fa-utensils"></i>
+            </div>
+            <div class="area-info">
+              <h4>Dedicated Kitchen Area</h4>
+              <p>Spacious and well-equipped space for professional cooking.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Services Offered Section -->
+
+    <!-- Why Choose Celebration Garden Section -->
+    <!-- Why Choose Celebration Garden Section -->
+    <section class="cg-why-choose-section">
+      <div class="cg-why-choose-container">
+        <div class="cg-why-choose-header">
+          <p class="cg-why-choose-subtitle">Your Premier Event Destination</p>
+          <h2 class="cg-why-choose-title">Why Choose Celebration Garden?</h2>
+          <p class="cg-why-choose-tagline">
+            Experience the perfect blend of elegance, convenience, and
+            exceptional service
+          </p>
+        </div>
+
+        <div class="cg-why-choose-content">
+          <div class="cg-why-choose-features">
+            <!-- Feature 1 -->
+            <div class="cg-why-choose-feature">
+              <div class="cg-feature-icon">
+                <i class="fas fa-subway"></i>
+              </div>
+              <div class="cg-feature-content">
+                <h4>Prime Location</h4>
+                <p>
+                  Walking distance from metro station for easy accessibility
+                </p>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="cg-why-choose-feature">
+              <div class="cg-feature-icon">
+                <i class="fas fa-parking"></i>
+              </div>
+              <div class="cg-feature-content">
+                <h4>Ample Parking</h4>
+                <p>Free parking space for over 200 cars with security guards</p>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="cg-why-choose-feature">
+              <div class="cg-feature-icon">
+                <i class="fas fa-palette"></i>
+              </div>
+              <div class="cg-feature-content">
+                <h4>Custom Decoration</h4>
+                <p>Tailored themes and decor to match your vision perfectly</p>
+              </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="cg-why-choose-feature">
+              <div class="cg-feature-icon">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <div class="cg-feature-content">
+                <h4>Large Kitchen</h4>
+                <p>Spacious, well-equipped kitchen for professional catering</p>
+              </div>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="cg-why-choose-feature">
+              <div class="cg-feature-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="cg-feature-content">
+                <h4>Grand Capacity</h4>
+                <p>Accommodates 1000+ guests for large-scale celebrations</p>
+              </div>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="cg-why-choose-feature">
+              <div class="cg-feature-icon">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <div class="cg-feature-content">
+                <h4>Skilled Staff</h4>
+                <p>
+                  Professional and attentive team ensuring flawless execution
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cg-why-choose-visual">
+            <div class="cg-visual-container">
+              <div class="cg-visual-image">
+                <img
+                  src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                  alt="Celebration Garden Venue"
+                />
+                <div class="cg-visual-overlay"></div>
+              </div>
+              <div class="cg-visual-highlights">
+                <div class="cg-highlight-item">
+                  <div class="cg-highlight-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>Elegant Indoor & Outdoor Spaces</p>
+                </div>
+                <div class="cg-highlight-item">
+                  <div class="cg-highlight-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>Modern Amenities with Timeless Design</p>
+                </div>
+                <div class="cg-highlight-item">
+                  <div class="cg-highlight-icon">
+                    <i class="fas fa-check-circle"></i>
+                  </div>
+                  <p>Prime Location in Kalindi Kunj</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="cg-why-choose-cta">
+      <a href="#" class="cg-why-choose-button">
+        <span>View All Services</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+    </div> -->
+      </div>
+    </section>
+    <!-- End Why Choose Celebration Garden Section -->
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Testimonials</h2>
-            </div>
-            <div class="testimonials-container">
-                <div class="testimonial">
-                    <p class="testimonial-text">"We hosted our daughter's wedding at Celebration Garden and it exceeded
-                        all our expectations. The staff was incredibly attentive, the food was exquisite, and the Garden
-                        Pavilion provided the perfect backdrop for their special day."</p>
-                    <p class="testimonial-author">- The Sharma Family</p>
-                </div>
-                <div class="testimonial">
-                    <p class="testimonial-text">"The Grand Ballroom was everything we dreamed of for our wedding
-                        reception. The crystal chandeliers and elegant decor created a magical atmosphere that our
-                        guests are still talking about!"</p>
-                    <p class="testimonial-author">- Priya & Raj</p>
-                </div>
-            </div>
+    <section class="cg-testimonials-section">
+      <div class="cg-testimonials-container">
+        <div class="cg-testimonials-header">
+          <h2 class="cg-testimonials-title">What Our Clients Say</h2>
+          <p class="cg-testimonials-subtitle">
+            Heartwarming stories from our cherished guests
+          </p>
         </div>
+
+        <div class="cg-testimonials-carousel">
+          <div class="cg-testimonials-track">
+            <!-- Testimonial 1 -->
+            <div class="cg-testimonial-slide active">
+              <div class="cg-testimonial-content">
+                <div class="cg-quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="cg-testimonial-text">
+                  "We hosted our daughter's wedding at Celebration Garden and it
+                  exceeded all our expectations. The staff was incredibly
+                  attentive, the food was exquisite, and the Garden Pavilion
+                  provided the perfect backdrop for their special day."
+                </p>
+                <div class="cg-testimonial-author">
+                  <span class="cg-author-name">The Sharma Family</span>
+                  <span class="cg-author-event">Wedding Celebration</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="cg-testimonial-slide">
+              <div class="cg-testimonial-content">
+                <div class="cg-quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="cg-testimonial-text">
+                  "The Grand Ballroom was everything we dreamed of for our
+                  wedding reception. The crystal chandeliers and elegant decor
+                  created a magical atmosphere that our guests are still talking
+                  about!"
+                </p>
+                <div class="cg-testimonial-author">
+                  <span class="cg-author-name">Priya & Raj</span>
+                  <span class="cg-author-event">Wedding Reception</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="cg-testimonial-slide">
+              <div class="cg-testimonial-content">
+                <div class="cg-quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="cg-testimonial-text">
+                  "Celebration Garden made our corporate gala an unforgettable
+                  success. The team's attention to detail and professional
+                  service ensured everything ran smoothly from start to finish."
+                </p>
+                <div class="cg-testimonial-author">
+                  <span class="cg-author-name">Tech Innovations Ltd.</span>
+                  <span class="cg-author-event">Corporate Gala</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="cg-testimonial-slide">
+              <div class="cg-testimonial-content">
+                <div class="cg-quote-icon">
+                  <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="cg-testimonial-text">
+                  "Our anniversary celebration was absolutely perfect! The
+                  intimate setting, delicious food, and personalized service
+                  made our 25th anniversary a truly memorable occasion."
+                </p>
+                <div class="cg-testimonial-author">
+                  <span class="cg-author-name">Mr. & Mrs. Kapoor</span>
+                  <span class="cg-author-event">25th Anniversary</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Dots -->
+          <div class="cg-testimonials-dots">
+            <span class="cg-dot active" data-slide="0"></span>
+            <span class="cg-dot" data-slide="1"></span>
+            <span class="cg-dot" data-slide="2"></span>
+            <span class="cg-dot" data-slide="3"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Elements -->
+      <div class="cg-testimonials-bg-element cg-bg-1"></div>
+      <div class="cg-testimonials-bg-element cg-bg-2"></div>
     </section>
+    <!-- Testimonials Section -->
+
+    <!-- Video Gallery Section -->
+    <section class="cg-video-gallery-section">
+      <div class="cg-video-gallery-container">
+        <div class="cg-video-gallery-header">
+          <h2 class="cg-video-gallery-title">Inside Celebration Garden</h2>
+          <p class="cg-video-gallery-subtitle">
+            Experience our venue through these captivating moments
+          </p>
+        </div>
+
+        <div class="cg-video-gallery-grid">
+          <!-- Video 1 -->
+          <div class="cg-video-item">
+            <div class="cg-video-wrapper">
+              <div class="cg-video-embed">
+                <div class="cg-autoplay-badge">
+                  <i class="fas fa-play-circle"></i> Autoplay
+                </div>
+                <iframe
+                  src="https://www.youtube.com/embed/ODRK4c9fGbU?autoplay=1&mute=1&modestbranding=1&rel=0&controls=0&showinfo=0&iv_load_policy=3&loop=1&playlist=ODRK4c9fGbU"
+                  title="Banquet Hall In Kalindi Kunj | New Delhi | Celebration Garden"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"
+                >
+                </iframe>
+              </div>
+              <div class="cg-video-info">
+                <h4 class="cg-video-title">
+                  Banquet Hall In Kalindi Kunj | Celebration Garden
+                </h4>
+                <p class="cg-video-description">
+                  Explore our elegant banquet hall in the heart of Kalindi Kunj
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="cg-video-item">
+            <div class="cg-video-wrapper">
+              <div class="cg-video-embed">
+                <div class="cg-autoplay-badge">
+                  <i class="fas fa-play-circle"></i> Autoplay
+                </div>
+                <iframe
+                  src="https://www.youtube.com/embed/2YBQ0kEm6Dc?autoplay=1&mute=1&modestbranding=1&rel=0&controls=0&showinfo=0&iv_load_policy=3&loop=1&playlist=2YBQ0kEm6Dc"
+                  title="what I eat in a Muslim wedding #indianmuslimwedding #youtubeshorts #viral #fypシ"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"
+                >
+                </iframe>
+              </div>
+              <div class="cg-video-info">
+                <h4 class="cg-video-title">
+                  Culinary Experience | Muslim Wedding
+                </h4>
+                <p class="cg-video-description">
+                  Discover our exquisite culinary offerings
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="cg-video-item">
+            <div class="cg-video-wrapper">
+              <div class="cg-video-embed">
+                <div class="cg-autoplay-badge">
+                  <i class="fas fa-play-circle"></i> Autoplay
+                </div>
+                <iframe
+                  src="https://www.youtube.com/embed/ODRK4c9fGbU?autoplay=1&mute=1&modestbranding=1&rel=0&controls=0&showinfo=0&iv_load_policy=3&loop=1&playlist=ODRK4c9fGbU"
+                  title="Banquet Hall In Kalindi Kunj | New Delhi | Celebration Garden"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  loading="lazy"
+                >
+                </iframe>
+              </div>
+              <div class="cg-video-info">
+                <h4 class="cg-video-title">
+                  Banquet Hall In Kalindi Kunj | Celebration Garden
+                </h4>
+                <p class="cg-video-description">
+                  Explore our elegant banquet hall in the heart of Kalindi Kunj
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cg-video-gallery-cta">
+          <p class="cg-cta-text">Want to see more of our celebrations?</p>
+          <a href="#" class="cg-cta-button">
+            <span>View Our Gallery</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Background Elements -->
+      <div class="cg-video-bg-element cg-video-bg-1"></div>
+      <div class="cg-video-bg-element cg-video-bg-2"></div>
+    </section>
+    <!-- Video Gallery Section -->
 
     <!-- Contact Section -->
     <section class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <div class="contact-details">
-                        <p>📍 123 Celebration Road, Mumbai, India 400001</p>
-                        <p>📞 +91 22 1234 5678</p>
-                        <p>✉️ info@celebrationgarden.in</p>
-                    </div>
-                    <p>Our office hours are Monday to Saturday, 10:00 AM to 7:00 PM. Feel free to reach out to us for
-                        any inquiries or to schedule a venue tour.</p>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="event-type">Event Type</label>
-                            <select id="event-type">
-                                <option value="">Select Event Type</option>
-                                <option value="wedding">Wedding</option>
-                                <option value="reception">Reception</option>
-                                <option value="anniversary">Anniversary</option>
-                                <option value="corporate">Corporate Event</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
         </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Get In Touch</h3>
+            <div class="contact-details">
+              <p>📍 123 Celebration Road, Mumbai, India 400001</p>
+              <p>📞 +91 22 1234 5678</p>
+              <p>✉️ info@celebrationgarden.in</p>
+            </div>
+            <p>
+              Our office hours are Monday to Saturday, 10:00 AM to 7:00 PM. Feel
+              free to reach out to us for any inquiries or to schedule a venue
+              tour.
+            </p>
+          </div>
+          <div class="contact-form">
+            <form>
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" />
+              </div>
+              <div class="form-group">
+                <label for="event-type">Event Type</label>
+                <select id="event-type">
+                  <option value="">Select Event Type</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="reception">Reception</option>
+                  <option value="anniversary">Anniversary</option>
+                  <option value="corporate">Corporate Event</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </section>
     <div id="footer"></div>
 
     <script src="includes/footer-scripts.js"></script>
 
-
     <!-- THIS PAGE SCRIPT -->
 
     <!-- HERO SLIDER SCRIPT -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.slider-dot');
-            const prevArrow = document.querySelector('.arrow.prev');
-            const nextArrow = document.querySelector('.arrow.next');
-            let currentSlide = 0;
-            let slideInterval;
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".slider-dot");
+        const prevArrow = document.querySelector(".arrow.prev");
+        const nextArrow = document.querySelector(".arrow.next");
+        let currentSlide = 0;
+        let slideInterval;
 
-            // Function to show a specific slide
-            function showSlide(n) {
-                // Pause any playing videos in non-active slides
-                document.querySelectorAll('.video-slide video').forEach(video => {
-                    if (!video.closest('.slide').classList.contains('active')) {
-                        video.pause();
-                    }
-                });
-
-                // Remove active class from all slides and dots
-                slides.forEach(slide => slide.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
-
-                // Adjust currentSlide index if out of bounds
-                if (n >= slides.length) currentSlide = 0;
-                else if (n < 0) currentSlide = slides.length - 1;
-                else currentSlide = n;
-
-                // Add active class to current slide and dot
-                slides[currentSlide].classList.add('active');
-                dots[currentSlide].classList.add('active');
-
-                // Play video if the active slide is a video slide
-                const activeVideo = document.querySelector('.slide.active video');
-                if (activeVideo) {
-                    activeVideo.play().catch(e => {
-                        console.log("Video autoplay prevented:", e);
-                    });
-                }
+        // Function to show a specific slide
+        function showSlide(n) {
+          // Pause any playing videos in non-active slides
+          document.querySelectorAll(".video-slide video").forEach((video) => {
+            if (!video.closest(".slide").classList.contains("active")) {
+              video.pause();
             }
+          });
 
-            // Next slide function
-            function nextSlide() {
-                showSlide(currentSlide + 1);
-            }
+          // Remove active class from all slides and dots
+          slides.forEach((slide) => slide.classList.remove("active"));
+          dots.forEach((dot) => dot.classList.remove("active"));
 
-            // Start auto sliding
-            function startSlideShow() {
-                slideInterval = setInterval(nextSlide, 8000); // Change slide every 6 seconds
-            }
+          // Adjust currentSlide index if out of bounds
+          if (n >= slides.length) currentSlide = 0;
+          else if (n < 0) currentSlide = slides.length - 1;
+          else currentSlide = n;
 
-            // Stop auto sliding
-            function stopSlideShow() {
-                clearInterval(slideInterval);
-            }
+          // Add active class to current slide and dot
+          slides[currentSlide].classList.add("active");
+          dots[currentSlide].classList.add("active");
 
-            // Event listeners for arrows
-            nextArrow.addEventListener('click', () => {
-                stopSlideShow();
-                nextSlide();
-                startSlideShow();
+          // Play video if the active slide is a video slide
+          const activeVideo = document.querySelector(".slide.active video");
+          if (activeVideo) {
+            activeVideo.play().catch((e) => {
+              console.log("Video autoplay prevented:", e);
             });
+          }
+        }
 
-            prevArrow.addEventListener('click', () => {
-                stopSlideShow();
-                showSlide(currentSlide - 1);
-                startSlideShow();
-            });
+        // Next slide function
+        function nextSlide() {
+          showSlide(currentSlide + 1);
+        }
 
-            // Event listeners for dots
-            dots.forEach(dot => {
-                dot.addEventListener('click', function () {
-                    stopSlideShow();
-                    const slideIndex = parseInt(this.getAttribute('data-slide'));
-                    showSlide(slideIndex);
-                    startSlideShow();
-                });
-            });
+        // Start auto sliding
+        function startSlideShow() {
+          slideInterval = setInterval(nextSlide, 8000); // Change slide every 6 seconds
+        }
 
-            // Pause slideshow when user hovers over slider
-            const slider = document.querySelector('.hero-slider');
-            slider.addEventListener('mouseenter', stopSlideShow);
-            slider.addEventListener('mouseleave', startSlideShow);
+        // Stop auto sliding
+        function stopSlideShow() {
+          clearInterval(slideInterval);
+        }
 
-            // Initialize the slideshow
-            startSlideShow();
+        // Event listeners for arrows
+        nextArrow.addEventListener("click", () => {
+          stopSlideShow();
+          nextSlide();
+          startSlideShow();
         });
+
+        prevArrow.addEventListener("click", () => {
+          stopSlideShow();
+          showSlide(currentSlide - 1);
+          startSlideShow();
+        });
+
+        // Event listeners for dots
+        dots.forEach((dot) => {
+          dot.addEventListener("click", function () {
+            stopSlideShow();
+            const slideIndex = parseInt(this.getAttribute("data-slide"));
+            showSlide(slideIndex);
+            startSlideShow();
+          });
+        });
+
+        // Pause slideshow when user hovers over slider
+        const slider = document.querySelector(".hero-slider");
+        slider.addEventListener("mouseenter", stopSlideShow);
+        slider.addEventListener("mouseleave", startSlideShow);
+
+        // Initialize the slideshow
+        startSlideShow();
+      });
     </script>
 
     <!-- VENUE GALLERY SCRIPT -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Area data with images and descriptions
-            const areaData = {
-                lawn: {
-                    title: "Lawn Area",
-                    description: "Our beautifully manicured lawn area provides a stunning outdoor setting for ceremonies and cocktail hours. Surrounded by lush gardens and elegant landscaping, this space creates a perfect backdrop for your special moments with natural beauty and tranquility.",
-                    images: [
-                        "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1444212477490-ca407925329e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                entrance: {
-                    title: "Grand Entrance",
-                    description: "Make a memorable first impression with our grand entrance area featuring elegant architectural details, stunning floral arrangements, and a welcoming ambiance that sets the tone for your celebration.",
-                    images: [
-                        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1540946485067-953f20a4c5a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                dining: {
-                    title: "Dining Area",
-                    description: "Our elegant dining area features customizable layouts to accommodate your guests comfortably. With attention to detail and sophisticated decor, this space provides the perfect atmosphere for enjoying culinary delights and celebrations.",
-                    images: [
-                        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                dance: {
-                    title: "Dance Floor",
-                    description: "Our custom illuminated dance floor creates the perfect centerpiece for celebrations. With state-of-the-art lighting and a spacious design, your guests will enjoy dancing the night away in style.",
-                    images: [
-                        "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1501281667305-0d4ebd5b1b08?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                lounge: {
-                    title: "Lounge Section",
-                    description: "Our comfortable lounge area provides a relaxed setting for guests to mingle and enjoy conversation. With plush seating and intimate lighting, it's the perfect escape from the dance floor.",
-                    images: [
-                        "https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1533090368676-1fd25485db88?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                bar: {
-                    title: "Bar Counter",
-                    description: "Our elegantly designed bar counter offers premium beverage service with skilled bartenders ready to craft delicious drinks for your guests. The sophisticated design complements any event style.",
-                    images: [
-                        "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                photoshoot: {
-                    title: "Photoshoot Area",
-                    description: "Our specially designed photoshoot areas provide beautiful backdrops for capturing your special moments. With carefully curated settings and optimal lighting, these spaces ensure stunning photographs.",
-                    images: [
-                        "https://images.unsplash.com/photo-1551248429-40975aa4de74?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1519735772110-17bb5d13cfc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1588516903728-8f33f9edc82c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                },
-                coffee: {
-                    title: "Coffee Bar",
-                    description: "Our premium coffee bar offers expertly crafted beverages and refreshments for your guests. Featuring high-quality beans and skilled baristas, it's the perfect addition to any event.",
-                    images: [
-                        "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                        "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    ]
-                }
-            };
+      document.addEventListener("DOMContentLoaded", function () {
+        // Area data with images and descriptions
+        const areaData = {
+          lawn: {
+            title: "Lawn Area",
+            description:
+              "Our beautifully manicured lawn area provides a stunning outdoor setting for ceremonies and cocktail hours. Surrounded by lush gardens and elegant landscaping, this space creates a perfect backdrop for your special moments with natural beauty and tranquility.",
+            images: [
+              "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1444212477490-ca407925329e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            ],
+          },
+          entrance: {
+            title: "Grand Entrance",
+            description:
+              "Make a memorable first impression with our grand entrance area featuring elegant architectural details, stunning floral arrangements, and a welcoming ambiance that sets the tone for your celebration.",
+            images: [
+              "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1540946485067-953f20a4c5a4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            ],
+          },
+          dining: {
+            title: "Dining Area",
+            description:
+              "Our elegant dining area features customizable layouts to accommodate your guests comfortably. With attention to detail and sophisticated decor, this space provides the perfect atmosphere for enjoying culinary delights and celebrations.",
+            images: [
+              "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            ],
+          },
+          dance: {
+            title: "Dance Floor",
+            description:
+              "Our custom illuminated dance floor creates the perfect centerpiece for celebrations. With state-of-the-art lighting and a spacious design, your guests will enjoy dancing the night away in style.",
+            images: [
+              "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1501281667305-0d4ebd5b1b08?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            ],
+          },
+          lounge: {
+            title: "Lounge Section",
+            description:
+              "Our comfortable lounge area provides a relaxed setting for guests to mingle and enjoy conversation. With plush seating and intimate lighting, it's the perfect escape from the dance floor.",
+            images: [
+              "https://images.unsplash.com/photo-1595428774223-ef52624120d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1540518614846-7eded433c457?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1533090368676-1fd25485db88?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            ],
+          },
+          bar: {
+            title: "Bar Counter",
+            description:
+              "Our elegantly designed bar counter offers premium beverage service with skilled bartenders ready to craft delicious drinks for your guests. The sophisticated design complements any event style.",
+            images: [
+              "https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            ],
+          },
+          photoshoot: {
+            title: "Photoshoot Area",
+            description:
+              "Our specially designed photoshoot areas provide beautiful backdrops for capturing your special moments. With carefully curated settings and optimal lighting, these spaces ensure stunning photographs.",
+            images: [
+              "https://images.unsplash.com/photo-1551248429-40975aa4de74?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1519735772110-17bb5d13cfc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1588516903728-8f33f9edc82c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            ],
+          },
+          coffee: {
+            title: "Coffee Bar",
+            description:
+              "Our premium coffee bar offers expertly crafted beverages and refreshments for your guests. Featuring high-quality beans and skilled baristas, it's the perfect addition to any event.",
+            images: [
+              "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1445116572660-236099ec97a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+              "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+            ],
+          },
+        };
 
-            // Get DOM elements
-            const areaItems = document.querySelectorAll('.area-item');
-            const modal = document.getElementById('galleryModal');
-            const modalTitle = document.getElementById('modalAreaTitle');
-            const galleryContainer = document.getElementById('areaGallery');
-            const areaDescription = document.getElementById('areaDescription');
-            const closeModal = document.querySelector('.close-modal');
+        // Get DOM elements
+        const areaItems = document.querySelectorAll(".area-item");
+        const modal = document.getElementById("galleryModal");
+        const modalTitle = document.getElementById("modalAreaTitle");
+        const galleryContainer = document.getElementById("areaGallery");
+        const areaDescription = document.getElementById("areaDescription");
+        const closeModal = document.querySelector(".close-modal");
 
-            // Add click event to each area item
-            areaItems.forEach(item => {
-                item.addEventListener('click', function () {
-                    const areaId = this.getAttribute('data-area');
-                    openGallery(areaId);
-                });
-            });
-
-            // Close modal when clicking the close button
-            closeModal.addEventListener('click', function () {
-                closeGallery();
-            });
-
-            // Close modal when clicking outside the content
-            modal.addEventListener('click', function (e) {
-                if (e.target === modal) {
-                    closeGallery();
-                }
-            });
-
-            // Function to open gallery with specific area content
-            function openGallery(areaId) {
-                const area = areaData[areaId];
-
-                if (!area) return;
-
-                // Set modal title and description
-                modalTitle.textContent = area.title;
-                areaDescription.textContent = area.description;
-
-                // Clear previous gallery items
-                galleryContainer.innerHTML = '';
-
-                // Add new gallery items
-                area.images.forEach(imageUrl => {
-                    const galleryItem = document.createElement('div');
-                    galleryItem.className = 'gallery-item';
-
-                    const img = document.createElement('img');
-                    img.src = imageUrl;
-                    img.alt = area.title;
-
-                    galleryItem.appendChild(img);
-                    galleryContainer.appendChild(galleryItem);
-                });
-
-                // Show modal
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-
-            // Function to close gallery
-            function closeGallery() {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-
-                // Clear gallery after transition
-                setTimeout(() => {
-                    galleryContainer.innerHTML = '';
-                }, 300);
-            }
-
-            // Close modal with Escape key
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && modal.classList.contains('active')) {
-                    closeGallery();
-                }
-            });
+        // Add click event to each area item
+        areaItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const areaId = this.getAttribute("data-area");
+            openGallery(areaId);
+          });
         });
-    </script>
-</body>
 
+        // Close modal when clicking the close button
+        closeModal.addEventListener("click", function () {
+          closeGallery();
+        });
+
+        // Close modal when clicking outside the content
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) {
+            closeGallery();
+          }
+        });
+
+        // Function to open gallery with specific area content
+        function openGallery(areaId) {
+          const area = areaData[areaId];
+
+          if (!area) return;
+
+          // Set modal title and description
+          modalTitle.textContent = area.title;
+          areaDescription.textContent = area.description;
+
+          // Clear previous gallery items
+          galleryContainer.innerHTML = "";
+
+          // Add new gallery items
+          area.images.forEach((imageUrl) => {
+            const galleryItem = document.createElement("div");
+            galleryItem.className = "gallery-item";
+
+            const img = document.createElement("img");
+            img.src = imageUrl;
+            img.alt = area.title;
+
+            galleryItem.appendChild(img);
+            galleryContainer.appendChild(galleryItem);
+          });
+
+          // Show modal
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+
+        // Function to close gallery
+        function closeGallery() {
+          modal.classList.remove("active");
+          document.body.style.overflow = "auto";
+
+          // Clear gallery after transition
+          setTimeout(() => {
+            galleryContainer.innerHTML = "";
+          }, 300);
+        }
+
+        // Close modal with Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal.classList.contains("active")) {
+            closeGallery();
+          }
+        });
+      });
+    </script>
+
+    <script>
+      // Testimonials Auto-Scroll Script
+      document.addEventListener("DOMContentLoaded", function () {
+        const slides = document.querySelectorAll(".cg-testimonial-slide");
+        const dots = document.querySelectorAll(".cg-dot");
+        let currentSlide = 0;
+        let slideInterval;
+
+        // Function to show a specific slide
+        function showSlide(n) {
+          // Remove active class from all slides and dots
+          slides.forEach((slide) => slide.classList.remove("active"));
+          dots.forEach((dot) => dot.classList.remove("active"));
+
+          // Adjust currentSlide index if out of bounds
+          if (n >= slides.length) currentSlide = 0;
+          else if (n < 0) currentSlide = slides.length - 1;
+          else currentSlide = n;
+
+          // Add active class to current slide and dot
+          slides[currentSlide].classList.add("active");
+          dots[currentSlide].classList.add("active");
+        }
+
+        // Next slide function
+        function nextSlide() {
+          showSlide(currentSlide + 1);
+        }
+
+        // Start auto sliding
+        function startSlideShow() {
+          slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+
+        // Stop auto sliding
+        function stopSlideShow() {
+          clearInterval(slideInterval);
+        }
+
+        // Event listeners for dots
+        dots.forEach((dot) => {
+          dot.addEventListener("click", function () {
+            stopSlideShow();
+            const slideIndex = parseInt(this.getAttribute("data-slide"));
+            showSlide(slideIndex);
+            startSlideShow();
+          });
+        });
+
+        // Pause slideshow when user hovers over carousel
+        const carousel = document.querySelector(".cg-testimonials-carousel");
+        carousel.addEventListener("mouseenter", stopSlideShow);
+        carousel.addEventListener("mouseleave", startSlideShow);
+
+        // Initialize the slideshow
+        startSlideShow();
+      });
+    </script>
+
+    <script>
+      // Enhanced Video Gallery Script with Autoplay
+      document.addEventListener("DOMContentLoaded", function () {
+        const videoItems = document.querySelectorAll(".cg-video-item");
+
+        // Initialize all videos with autoplay and mute
+        function initializeVideos() {
+          videoItems.forEach((item) => {
+            const iframe = item.querySelector("iframe");
+            const overlay = item.querySelector(".cg-video-overlay");
+
+            // Ensure autoplay parameters are set
+            let currentSrc = iframe.src;
+            if (!currentSrc.includes("autoplay=1")) {
+              currentSrc +=
+                (currentSrc.includes("?") ? "&" : "?") + "autoplay=1&mute=1";
+              iframe.src = currentSrc;
+            }
+
+            // Hide overlay when video starts playing
+            iframe.addEventListener("load", function () {
+              // The video should start playing automatically due to autoplay parameter
+              setTimeout(() => {
+                overlay.style.opacity = "0";
+                setTimeout(() => {
+                  overlay.style.display = "none";
+                }, 300);
+              }, 1000);
+            });
+
+            // Optional: Show overlay again when video ends (for looping videos)
+            iframe.addEventListener("ended", function () {
+              // Video will restart automatically due to loop parameter
+            });
+
+            // Prevent right-click
+            iframe.addEventListener("contextmenu", function (e) {
+              e.preventDefault();
+              return false;
+            });
+          });
+        }
+
+        // Initialize when page loads
+        initializeVideos();
+
+        // Additional right-click protection for the entire section
+        document.addEventListener("contextmenu", function (e) {
+          if (e.target.closest(".cg-video-gallery-section")) {
+            e.preventDefault();
+            return false;
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
