@@ -1,3 +1,8 @@
+IMAGE DIMENTION FOR BANNER
+1250px * 650px
+
+
+
 # celebrationgarden
 Premier Wedding Banquet Venues
 
