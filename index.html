@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Celebration Garden</title>
     
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Cinzel for Royal Headings, Cormorant for Elegance, Montserrat for Body -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -159,15 +157,20 @@
         
         .btn:hover::before { width: 100%; }
 
-        /* --- 3. NAVIGATION --- */
+        /* --- 3. NAVIGATION --- *//* --- 3. NAVIGATION --- */
         .navbar {
             position: fixed;
             top: 0; left: 0; width: 100%;
-            background: rgba(255, 255, 255, 0.98);
+            
+            /* CHANGE: Replaced solid color with metallic gold gradient */
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            
             z-index: 1000;
-            padding: 1.2rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-            border-bottom: 2px solid var(--color-secondary);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15); /* Slightly stronger shadow for depth */
+            
+            /* Keep border dark green for definition */
+            border-bottom: 2px solid var(--color-primary);
         }
 
         .nav-container {
@@ -177,41 +180,57 @@
         }
 
         .logo {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--color-primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
         }
-        
-        .logo span { 
-            color: var(--color-secondary); 
-            background: linear-gradient(to right, #bf953f, #aa771c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .logo img {
+            height: 60px; 
+            width: auto;
+            object-fit: contain;
+            /* Optional: Adds a slight drop shadow to the logo so it pops off the gradient background */
+            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
         }
 
         .nav-links a {
             font-family: var(--font-heading);
             font-size: 0.85rem;
-            font-weight: 700;
+            font-weight: 800; /* Made slightly bolder for better readability on gradient */
+            
+            /* Keep text Dark Green so it is readable on gold */
             color: var(--color-primary);
+            
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-left: 2.5rem;
             position: relative;
+            text-shadow: 0 1px 1px rgba(255,255,255,0.3); /* Slight light shadow to help text pop */
         }
         
         .nav-links a::after {
             content: '';
             position: absolute;
             bottom: -5px; left: 0; width: 0%; height: 2px;
-            background: var(--color-secondary);
+            
+            /* Keep underline Dark Green */
+            background: var(--color-primary);
+            
             transition: var(--transition);
         }
 
         .nav-links a:hover::after { width: 100%; }
+
+        /* Mobile adjustment for logo on gold header */
+        @media (max-width: 768px) {
+            .logo img {
+                height: 45px;
+            }
+             .nav-links {
+                 /* Ensure mobile menu background also gets the gradient if it drops down */
+                 background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+                 padding-bottom: 1rem; /* Add some padding if it wraps */
+            }
+        }
 
         /* --- 4. HERO SLIDER --- */
         .hero-slider {
@@ -874,6 +893,18 @@
         }
         .footer-links a:hover { color: var(--color-secondary); padding-left: 5px; }
 
+        /* Style for plain text list items in footer */
+        .footer-links li {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .footer-links li::before {
+            content: '•';
+            color: var(--color-secondary);
+        }
+
         .copyright {
             background: #000;
             padding: 2rem 0;
@@ -963,15 +994,19 @@
             
             .modal-content { padding: 2rem; margin: 20px auto; width: 95%; }
             .modal-tab-btn { padding: 0.4rem 0.8rem; font-size: 0.75rem; margin-bottom: 5px; }
+            
+            /* Logo adjustment for mobile */
+            .logo img { height: 45px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATION -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">Celebration<span>Garden</span></a>
+            <a href="#" class="logo">
+                <img src="assets/image/celebration-logo.png.png" alt="Celebration Garden">
+            </a>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#events">Services</a>
@@ -981,9 +1016,7 @@
         </div>
     </nav>
 
-    <!-- HERO SLIDER -->
     <section class="hero-slider">
-        <!-- Slide 1 - Video -->
         <div class="slide active video-slide">
             <div class="video-container">
                 <div class="vimeo-wrapper">
@@ -997,7 +1030,6 @@
             </div>
         </div>
 
-        <!-- Slide 2 -->
         <div class="slide" style="background-image: url('assets/image/entrance\ \(6\).JPG');">
             <div class="slide-content">
                 <h1 class="slide-title">Elegant Celebrations</h1>
@@ -1006,7 +1038,6 @@
             </div>
         </div>
 
-        <!-- Slide 3 -->
         <div class="slide" style="background-image: url('assets/image/entrance\ \(2\).JPG');">
             <div class="slide-content">
                 <h1 class="slide-title">Exquisite Culinary</h1>
@@ -1015,7 +1046,6 @@
             </div>
         </div>
 
-        <!-- Slide 4 -->
         <div class="slide" style="background-image: url('assets/image/DSC_6644.JPG');">
             <div class="slide-content">
                 <h1 class="slide-title">Memorable Moments</h1>
@@ -1037,7 +1067,6 @@
         </div>
     </section>
 
-    <!-- EVENTS / CELEBRATIONS SECTION -->
     <section id="events" class="section-padding bg-alt">
         <div class="container">
             <div class="section-header">
@@ -1047,7 +1076,6 @@
             </div>
 
             <div class="events-grid">
-                <!-- Engagement -->
                 <div class="event-card">
                     <div class="event-image" style="background-image: url('assets/image/photoarea1.JPG');">
                         <div class="event-icon"><i class="fas fa-heart"></i></div>
@@ -1063,7 +1091,6 @@
                     </div>
                 </div>
 
-                <!-- Wedding -->
                 <div class="event-card">
                     <div class="event-image" style="background-image: url('assets/image/Hall11.JPG');">
                         <div class="event-icon"><i class="fas fa-ring"></i></div>
@@ -1079,7 +1106,6 @@
                     </div>
                 </div>
 
-                <!-- Birthday -->
                 <div class="event-card">
                     <div class="event-image" style="background-image: url('assets/image/Gemini_Generated_Image_r6bpglr6bpglr6bp.png');">
                         <div class="event-icon"><i class="fas fa-birthday-cake"></i></div>
@@ -1095,7 +1121,6 @@
                     </div>
                 </div>
 
-                <!-- Reception -->
                 <div class="event-card">
                     <div class="event-image" style="background-image: url('assets/image/DSC_6679.JPG');">
                         <div class="event-icon"><i class="fas fa-glass-cheers"></i></div>
@@ -1111,7 +1136,6 @@
                     </div>
                 </div>
 
-                <!-- Corporate -->
                 <div class="event-card">
                     <div class="event-image" style="background-image: url('assets/image/photoarea4.JPG');">
                         <div class="event-icon"><i class="fas fa-briefcase"></i></div>
@@ -1127,7 +1151,6 @@
                     </div>
                 </div>
 
-                <!-- Special -->
                 <div class="event-card">
                     <div class="event-image" style="background-image: url('assets/image/Food\ \(3\).JPG');">
                         <div class="event-icon"><i class="fas fa-users"></i></div>
@@ -1151,7 +1174,6 @@
         </div>
     </section>
 
-    <!-- VENUE AREAS GRID -->
     <section class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -1220,7 +1242,6 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
     <section id="about" class="about-section section-padding">
         <div class="container">
             <div class="about-grid">
@@ -1259,7 +1280,6 @@
         </div>
     </section>
 
-    <!-- SERVICES OFFERED (List) -->
     <section class="section-padding bg-alt">
         <div class="container">
             <div class="section-header">
@@ -1315,7 +1335,6 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
     <section class="section-padding testimonials">
         <div class="container">
             <div class="section-header">
@@ -1324,28 +1343,24 @@
             </div>
             
             <div class="testimonial-carousel">
-                <!-- Slide 1 -->
                 <div class="testimonial-slide active">
                     <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
                     <p class="testimonial-text">"We hosted our daughter's wedding at Celebration Garden and it exceeded all our expectations. The staff was incredibly attentive and the food was exquisite."</p>
                     <span class="author-name">The Sharma Family</span>
                     <span>Wedding Celebration</span>
                 </div>
-                <!-- Slide 2 -->
                 <div class="testimonial-slide">
                     <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
                     <p class="testimonial-text">"The Grand Ballroom was everything we dreamed of. The crystal chandeliers and elegant decor created a magical atmosphere!"</p>
                     <span class="author-name">Priya & Raj</span>
                     <span>Wedding Reception</span>
                 </div>
-                <!-- Slide 3 -->
                 <div class="testimonial-slide">
                     <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
                     <p class="testimonial-text">"Celebration Garden made our corporate gala an unforgettable success. The team's attention to detail ensured everything ran smoothly."</p>
                     <span class="author-name">Tech Innovations Ltd.</span>
                     <span>Corporate Gala</span>
                 </div>
-                <!-- Slide 4 -->
                 <div class="testimonial-slide">
                     <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
                     <p class="testimonial-text">"Our anniversary celebration was perfect! The intimate setting and personalized service made our 25th anniversary truly memorable."</p>
@@ -1354,7 +1369,6 @@
                 </div>
             </div>
             
-            <!-- Simple dots for testimonials -->
             <div class="slider-nav" style="position: relative; margin-top: 3rem; bottom: auto;">
                 <div class="slider-dot active" onclick="showTestimonial(0)"></div>
                 <div class="slider-dot" onclick="showTestimonial(1)"></div>
@@ -1364,7 +1378,6 @@
         </div>
     </section>
 
-    <!-- VIDEO GALLERY - REFINED CINEMATIC TRIO -->
     <section class="section-padding" id="video-section">
         <div class="container">
             <div class="section-header">
@@ -1374,17 +1387,14 @@
             </div>
             
             <div class="video-royal-container">
-                <!-- Left Video -->
                 <div class="video-frame side">
                     <div class="video-placeholder" data-src="https://www.youtube.com/embed/ODRK4c9fGbU?mute=1&modestbranding=1&rel=0&controls=0&autoplay=1&loop=1&playlist=ODRK4c9fGbU"></div>
                 </div>
                 
-                <!-- Center Video (Main) -->
                 <div class="video-frame center">
                      <div class="video-placeholder" data-src="https://www.youtube.com/embed/2YBQ0kEm6Dc?mute=1&modestbranding=1&rel=0&controls=0&autoplay=1&loop=1&playlist=2YBQ0kEm6Dc"></div>
                 </div>
                 
-                <!-- Right Video -->
                 <div class="video-frame side">
                      <div class="video-placeholder" data-src="https://www.youtube.com/embed/ODRK4c9fGbU?mute=1&modestbranding=1&rel=0&controls=0&autoplay=1&loop=1&playlist=ODRK4c9fGbU"></div>
                 </div>
@@ -1392,7 +1402,6 @@
         </div>
     </section>
 
-    <!-- IMAGE GALLERY COLLAGE -->
     <section id="gallery" class="section-padding bg-alt">
         <div class="container">
             <div class="section-header">
@@ -1437,7 +1446,6 @@
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="section-header">
@@ -1507,22 +1515,21 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <!-- Col 1: Brand & About -->
                 <div class="footer-col footer-about">
-                    <a href="#" class="logo" style="display:block; margin-bottom:1.5rem;">Celebration<span>Garden</span></a>
+                    <a href="#" class="logo" style="display:block; margin-bottom:1.5rem;">
+                         <img src="assets/image/celebration-logo.png.png" alt="Celebration Garden" style="height: 50px;">
+                    </a>
                     <p>Celebration Garden is the premier venue for hosting life's most cherished moments in Kalindi Kunj, New Delhi. We blend sophisticated indoor spaces with breathtaking outdoor settings.</p>
-                    <div style="display: flex; gap: 1rem;">
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
                         <a href="#" style="width:40px; height:40px; border:1px solid #333; display:flex; align-items:center; justify-content:center; border-radius:50%; color:var(--color-secondary);"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" style="width:40px; height:40px; border:1px solid #333; display:flex; align-items:center; justify-content:center; border-radius:50%; color:var(--color-secondary);"><i class="fab fa-instagram"></i></a>
                         <a href="#" style="width:40px; height:40px; border:1px solid #333; display:flex; align-items:center; justify-content:center; border-radius:50%; color:var(--color-secondary);"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
-                <!-- Col 2: Quick Links -->
                 <div class="footer-col footer-links">
                     <h4>Quick Links</h4>
                     <ul>
@@ -1534,19 +1541,17 @@
                     </ul>
                 </div>
 
-                <!-- Col 3: Services -->
                 <div class="footer-col footer-links">
                     <h4>Our Services</h4>
                     <ul>
-                        <li><a href="#">Wedding Hall</a></li>
-                        <li><a href="#">Party Lawn</a></li>
-                        <li><a href="#">Corporate Events</a></li>
-                        <li><a href="#">Catering</a></li>
-                        <li><a href="#">Decoration</a></li>
+                        <li style="color: #b0b0b0; margin-bottom: 0.8rem;">Wedding Hall</li>
+                        <li style="color: #b0b0b0; margin-bottom: 0.8rem;">Party Lawn</li>
+                        <li style="color: #b0b0b0; margin-bottom: 0.8rem;">Corporate Events</li>
+                        <li style="color: #b0b0b0; margin-bottom: 0.8rem;">Catering</li>
+                        <li style="color: #b0b0b0; margin-bottom: 0.8rem;">Decoration</li>
                     </ul>
                 </div>
 
-                <!-- Col 4: Contact -->
                 <div class="footer-col footer-contact">
                     <h4>Contact Us</h4>
                     <ul>
@@ -1571,18 +1576,15 @@
         </div>
     </footer>
 
-    <!-- MODAL -->
     <div class="modal" id="galleryModal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
             <div class="modal-tabs" id="modalTabs">
-                <!-- Navigation tabs injected here via JS -->
-            </div>
+                </div>
             <h3 class="section-title" id="modalTitle" style="font-size: 2rem;">Area Title</h3>
             <p id="modalDesc">Description goes here.</p>
             <div class="modal-gallery" id="modalImages">
-                <!-- Images injected here -->
-            </div>
+                </div>
         </div>
     </div>
 
