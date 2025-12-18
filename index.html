@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Celebration Garden</title>
     
+    <!-- Fonts - Preloaded for Instant Rendering -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -26,11 +27,11 @@
             --font-subheading: 'Cormorant Garamond', serif;
             --font-body: 'Montserrat', sans-serif;
             
-            --radius: 2px; /* Sharp, premium edges */
+            --radius: 2px;
             --shadow: 0 20px 50px rgba(0,0,0,0.1);
             --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.2);
             --container-width: 1240px;
-            --transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1); /* Smooth elegant easing */
+            --transition: all 0.3s ease-out;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -95,7 +96,6 @@
             padding: 0 15px;
         }
         
-        /* Decorative lines for subtitle */
         .section-subtitle::before, .section-subtitle::after {
             content: '';
             position: absolute;
@@ -157,19 +157,14 @@
         
         .btn:hover::before { width: 100%; }
 
-        /* --- 3. NAVIGATION --- *//* --- 3. NAVIGATION --- */
+        /* --- 3. NAVIGATION --- */
         .navbar {
             position: fixed;
             top: 0; left: 0; width: 100%;
-            
-            /* CHANGE: Replaced solid color with metallic gold gradient */
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            
+            background: linear-gradient(to bottom, #d4af37 55%, #fcf6ba 100%);
             z-index: 1000;
             padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.15); /* Slightly stronger shadow for depth */
-            
-            /* Keep border dark green for definition */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border-bottom: 2px solid var(--color-primary);
         }
 
@@ -179,56 +174,41 @@
             align-items: center;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-        }
+        .logo { display: flex; align-items: center; }
 
         .logo img {
             height: 60px; 
             width: auto;
             object-fit: contain;
-            /* Optional: Adds a slight drop shadow to the logo so it pops off the gradient background */
-            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
         }
 
         .nav-links a {
             font-family: var(--font-heading);
             font-size: 0.85rem;
-            font-weight: 800; /* Made slightly bolder for better readability on gradient */
-            
-            /* Keep text Dark Green so it is readable on gold */
+            font-weight: 800;
             color: var(--color-primary);
-            
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-left: 2.5rem;
             position: relative;
-            text-shadow: 0 1px 1px rgba(255,255,255,0.3); /* Slight light shadow to help text pop */
         }
         
         .nav-links a::after {
             content: '';
             position: absolute;
             bottom: -5px; left: 0; width: 0%; height: 2px;
-            
-            /* Keep underline Dark Green */
             background: var(--color-primary);
-            
             transition: var(--transition);
         }
 
         .nav-links a:hover::after { width: 100%; }
 
-        /* Mobile adjustment for logo on gold header */
         @media (max-width: 768px) {
-            .logo img {
-                height: 45px;
-            }
+            .logo img { height: 45px; }
              .nav-links {
-                 /* Ensure mobile menu background also gets the gradient if it drops down */
-                 background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-                 padding-bottom: 1rem; /* Add some padding if it wraps */
+                 background: linear-gradient(to bottom, #d4af37 55%, #fcf6ba 100%);
+                 padding-bottom: 1rem;
             }
         }
 
@@ -359,7 +339,6 @@
             transform: translateY(-50%); pointer-events: none;
         }
 
-        /* --- UPDATED ARROWS (No Box) --- */
         .arrow {
             width: auto; height: auto;
             border: none;
@@ -368,8 +347,8 @@
             color: var(--color-secondary); 
             cursor: pointer; pointer-events: auto;
             transition: var(--transition);
-            font-size: 4rem; /* Large icon size */
-            text-shadow: 0 2px 15px rgba(0,0,0,0.8); /* Shadow for visibility */
+            font-size: 4rem;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.8);
             opacity: 0.8;
         }
 
@@ -381,7 +360,7 @@
             text-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
         }
 
-        /* --- 5. CELEBRATIONS GRID (Services) --- */
+        /* --- 5. CELEBRATIONS GRID --- */
         .events-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
@@ -482,10 +461,11 @@
             margin-right: 5px; margin-bottom: 5px;
         }
 
-        /* --- 6. VENUE AREAS --- */
+        /* --- 6. VENUE AREAS (Symmetrical Flex Layout) --- */
         .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 2rem;
         }
 
@@ -498,9 +478,17 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            /* Default: Fit 4 per row nicely with gaps (4x2 style) */
+            width: calc(25% - 2rem);
+            min-width: 260px;
         }
 
-        /* Gold Corner Accents */
+        /* --- NEW MODIFIER: 3 Columns for Services --- */
+        .areas-grid.services-layout .area-item {
+            /* 3 per row (3x3 style) */
+            width: calc(33.333% - 2rem);
+        }
+
         .area-item::after {
             content: '';
             position: absolute;
@@ -669,7 +657,7 @@
         
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- 9. VIDEO GALLERY - EQUAL SIZE LAYOUT --- */
+        /* --- 9. VIDEO GALLERY --- */
         #video-section {
             background-color: #051610; 
             color: white;
@@ -712,7 +700,6 @@
             pointer-events: none; 
         }
         
-        /* Uniform Hover Effect */
         .video-frame:hover {
             transform: translateY(-10px);
             border-color: #fff;
@@ -846,7 +833,7 @@
 
         /* --- 12. FOOTER --- */
         footer {
-            background: #020f0a; /* Almost black green */
+            background: #020f0a;
             color: #d0d0d0;
             padding-top: 6rem;
             border-top: 4px solid var(--color-secondary);
@@ -893,7 +880,6 @@
         }
         .footer-links a:hover { color: var(--color-secondary); padding-left: 5px; }
 
-        /* Style for plain text list items in footer */
         .footer-links li {
             font-family: var(--font-body);
             font-size: 1rem;
@@ -937,7 +923,6 @@
             line-height: 0.8;
         }
         
-        /* Modal Tabs */
         .modal-tabs {
             display: flex;
             flex-wrap: wrap;
@@ -976,12 +961,13 @@
             .video-royal-container { height: auto; flex-direction: column; }
             .video-frame { width: 100%; margin-bottom: 1rem; }
             .video-royal-container > div { width: 100%; }
+            .areas-grid { justify-content: center; }
+            .area-item { width: calc(33.33% - 2rem); } /* 3 per row on tablet */
         }
         
         @media (max-width: 768px) {
             .slide-title { font-size: 3rem; }
             .about-grid, .contact-layout { grid-template-columns: 1fr; }
-            .areas-grid { grid-template-columns: 1fr; }
             .collage-grid { grid-template-columns: 1fr; }
             .collage-item.large, .collage-item.wide { grid-column: span 1; grid-row: span 1; }
             .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -995,8 +981,9 @@
             .modal-content { padding: 2rem; margin: 20px auto; width: 95%; }
             .modal-tab-btn { padding: 0.4rem 0.8rem; font-size: 0.75rem; margin-bottom: 5px; }
             
-            /* Logo adjustment for mobile */
             .logo img { height: 45px; }
+            
+            .area-item { width: 100%; }
         }
     </style>
 </head>
@@ -1020,7 +1007,7 @@
         <div class="slide active video-slide">
             <div class="video-container">
                 <div class="vimeo-wrapper">
-                    <iframe src="https://player.vimeo.com/video/1128458846?background=1&autoplay=1&loop=1&muted=1&autopause=0&controls=0&title=0" frameborder="0" allow="autoplay; fullscreen" loading="lazy" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1128458846?background=1&autoplay=1&loop=1&muted=1&autopause=0&controls=0&title=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="slide-content">
@@ -1083,7 +1070,7 @@
                     <div class="event-content">
                         <h3 class="event-title">Engagement Ceremonies</h3>
                         <div class="event-subtitle">Where Your Forever Begins</div>
-                        <p class="event-desc">Begin your journey of love amidst the blossoming beauty of Celebration Garden. Our enchanting garden provides an idyllic backdrop for your engagement, where promises are made under the open sky.</p>
+                        <p class="event-desc">Begin your journey of love amidst the blossoming beauty of Celebration Garden.</p>
                         <div class="event-tags">
                             <span class="tag">Garden Setting</span>
                             <span class="tag">Custom Decor</span>
@@ -1098,7 +1085,7 @@
                     <div class="event-content">
                         <h3 class="event-title">Wedding Celebrations</h3>
                         <div class="event-subtitle">A Day of Timeless Romance</div>
-                        <p class="event-desc">Exchange your vows in a setting of unparalleled romance. Our stunning venue, harmoniously blending natural splendor with sophisticated amenities, sets the stage for the wedding of your dreams.</p>
+                        <p class="event-desc">Exchange your vows in a setting of unparalleled romance.</p>
                         <div class="event-tags">
                             <span class="tag">Grand Ballroom</span>
                             <span class="tag">Royal Terrace</span>
@@ -1112,8 +1099,8 @@
                     </div>
                     <div class="event-content">
                         <h3 class="event-title">Birthday Celebrations</h3>
-                        <div class="event-subtitle">Celebrate a Milestone, Create a Memory</div>
-                        <p class="event-desc">Mark your special day with joy and style at Celebration Garden. Whether an intimate gathering or a grand party, our venue resonates with laughter and celebration.</p>
+                        <div class="event-subtitle">Celebrate a Milestone</div>
+                        <p class="event-desc">Mark your special day with joy and style at Celebration Garden.</p>
                         <div class="event-tags">
                             <span class="tag">Custom Themes</span>
                             <span class="tag">Entertainment</span>
@@ -1127,10 +1114,9 @@
                     </div>
                     <div class="event-content">
                         <h3 class="event-title">Reception Parties</h3>
-                        <div class="event-subtitle">An Elegant Celebration of New Beginnings</div>
-                        <p class="event-desc">Continue the festivities in an atmosphere of refined charm. Celebration Garden offers the ideal setting for your reception party, where comfort meets elegance.</p>
+                        <div class="event-subtitle">An Elegant Celebration</div>
+                        <p class="event-desc">Continue the festivities in an atmosphere of refined charm.</p>
                         <div class="event-tags">
-                            <span class="tag">Premium Bar</span>
                             <span class="tag">Dance Floor</span>
                         </div>
                     </div>
@@ -1142,8 +1128,8 @@
                     </div>
                     <div class="event-content">
                         <h3 class="event-title">Corporate Events</h3>
-                        <div class="event-subtitle">Where Professionalism Meets Inspiration</div>
-                        <p class="event-desc">Elevate your next corporate gathering beyond the ordinary. Celebration Garden provides a sophisticated and conducive environment for meetings and office parties.</p>
+                        <div class="event-subtitle">Professionalism Meets Inspiration</div>
+                        <p class="event-desc">Elevate your next corporate gathering beyond the ordinary.</p>
                         <div class="event-tags">
                             <span class="tag">AV Equipment</span>
                             <span class="tag">Conference Setup</span>
@@ -1156,9 +1142,9 @@
                         <div class="event-icon"><i class="fas fa-users"></i></div>
                     </div>
                     <div class="event-content">
-                        <h3 class="event-title">Special & Social Gatherings</h3>
+                        <h3 class="event-title">Social Gatherings</h3>
                         <div class="event-subtitle">Life's Moments, Magnified</div>
-                        <p class="event-desc">From festive kitty parties and anniversaries to heartfelt reunions, every occasion holds its own magic. Our versatile space is designed to adapt to your vision.</p>
+                        <p class="event-desc">Every occasion holds its own magic. Our versatile space adapts to your vision.</p>
                         <div class="event-tags">
                             <span class="tag">Versatile Spaces</span>
                             <span class="tag">Intimate Settings</span>
@@ -1217,13 +1203,6 @@
                         <p>Comfortable seating for casual conversations</p>
                     </div>
                 </div>
-                <div class="area-item" data-area="bar">
-                    <div class="area-icon"><i class="fas fa-glass-cheers"></i></div>
-                    <div class="area-info">
-                        <h4>Bar Counter</h4>
-                        <p>Elegantly designed bar with premium service</p>
-                    </div>
-                </div>
                 <div class="area-item" data-area="photoshoot">
                     <div class="area-icon"><i class="fas fa-camera"></i></div>
                     <div class="area-info">
@@ -1248,7 +1227,7 @@
                 <div class="about-content">
                     <span class="section-subtitle">About Us</span>
                     <h2 class="section-title text-gold">The Best Banquet Hall in Delhi</h2>
-                    <p class="section-desc" style="margin-bottom: 2rem; color:rgba(255,255,255,0.85);">Celebration Garden, situated in the prime location of Kalindi Kunj, is the premier choice for hosting life's most cherished moments. Our venue masterfully blends sophisticated indoor spaces with breathtaking outdoor settings.</p>
+                    <p class="section-desc" style="margin-bottom: 2rem; color:rgba(255,255,255,0.85);">Celebration Garden, situated in the prime location of Kalindi Kunj, is the premier choice for hosting life's most cherished moments.</p>
                     
                     <div class="highlights">
                         <div class="highlight-item">
@@ -1269,12 +1248,13 @@
                         <div style="width: 70px; height: 70px; border: 1px solid var(--color-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--color-secondary);"><i class="fas fa-phone-alt"></i></div>
                         <div>
                             <p style="font-size: 0.9rem; text-transform: uppercase; font-weight: 700; color: var(--color-secondary); letter-spacing: 2px;">Plan Your Event</p>
-                            <p style="font-size: 1.6rem; font-weight: 700; color: white;">+91 8000013333</p>
+                            <p style="font-size: 1.6rem; font-weight: 700; color: white; line-height: 1.2;">+91 8000013333</p>
+                            <p style="font-size: 1.6rem; font-weight: 700; color: white; line-height: 1.2;">+91 9991119011</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="assets/image/Food (6).JPG" alt="Celebration Garden Banquet Hall" loading="lazy">
+                    <img src="assets/image/Food (6).JPG" alt="Celebration Garden" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1288,12 +1268,13 @@
                 <p class="section-desc">Thoughtfully curated amenities to make every celebration effortless.</p>
             </div>
             
-            <div class="areas-grid" style="grid-template-columns: repeat(3, 1fr);">
+            <!-- ADDED 'services-layout' CLASS HERE for 3x3 Grid -->
+            <div class="areas-grid services-layout">
                 <div class="area-item">
                     <div class="area-icon"><i class="fas fa-female"></i></div>
                     <div class="area-info">
                         <h4>Party Hall For Women</h4>
-                        <p>Exclusive hall designed for intimate celebrations and gatherings.</p>
+                        <p>Exclusive hall designed for intimate celebrations.</p>
                     </div>
                 </div>
                 <div class="area-item">
@@ -1313,22 +1294,22 @@
                 <div class="area-item">
                     <div class="area-icon"><i class="fas fa-car"></i></div>
                     <div class="area-info">
-                        <h4>Parking For 200 Cars with Guards</h4>
-                        <p>Secure and managed parking area for your guests’ convenience.</p>
+                        <h4>Parking For 200 Cars</h4>
+                        <p>Secure and managed parking area for your guests.</p>
                     </div>
                 </div>
                 <div class="area-item">
                     <div class="area-icon"><i class="fas fa-tint"></i></div>
                     <div class="area-info">
-                        <h4>Water Supply For Kitchen</h4>
-                        <p>Reliable and hygienic water source for catering facilities.</p>
+                        <h4>Water Supply</h4>
+                        <p>Reliable and hygienic water source for catering.</p>
                     </div>
                 </div>
                 <div class="area-item">
                     <div class="area-icon"><i class="fas fa-utensils"></i></div>
                     <div class="area-info">
                         <h4>Dedicated Kitchen Area</h4>
-                        <p>Spacious and well-equipped space for professional cooking.</p>
+                        <p>Spacious and well-equipped space for cooking.</p>
                     </div>
                 </div>
             </div>
@@ -1345,7 +1326,7 @@
             <div class="testimonial-carousel">
                 <div class="testimonial-slide active">
                     <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-                    <p class="testimonial-text">"We hosted our daughter's wedding at Celebration Garden and it exceeded all our expectations. The staff was incredibly attentive and the food was exquisite."</p>
+                    <p class="testimonial-text">"We hosted our daughter's wedding at Celebration Garden and it exceeded all our expectations."</p>
                     <span class="author-name">The Sharma Family</span>
                     <span>Wedding Celebration</span>
                 </div>
@@ -1388,15 +1369,15 @@
             
             <div class="video-royal-container">
                 <div class="video-frame side">
-                    <div class="video-placeholder" data-src="https://www.youtube.com/embed/ODRK4c9fGbU?mute=1&modestbranding=1&rel=0&controls=0&autoplay=1&loop=1&playlist=ODRK4c9fGbU"></div>
+                    <iframe loading="lazy" src="https://www.youtube.com/embed/ODRK4c9fGbU?mute=1&modestbranding=1&rel=0&controls=0&autoplay=1&loop=1&playlist=ODRK4c9fGbU" allow="autoplay; fullscreen" frameborder="0"></iframe>
                 </div>
                 
                 <div class="video-frame center">
-                     <div class="video-placeholder" data-src="https://www.youtube.com/embed/2YBQ0kEm6Dc?mute=1&modestbranding=1&rel=0&controls=0&autoplay=1&loop=1&playlist=2YBQ0kEm6Dc"></div>
+                     <iframe loading="lazy" src="https://www.youtube.com/embed/2YBQ0kEm6Dc?mute=1&modestbranding=1&rel=0&controls=0&autoplay=1&loop=1&playlist=2YBQ0kEm6Dc" allow="autoplay; fullscreen" frameborder="0"></iframe>
                 </div>
                 
                 <div class="video-frame side">
-                     <div class="video-placeholder" data-src="https://www.youtube.com/embed/ODRK4c9fGbU?mute=1&modestbranding=1&rel=0&controls=0&autoplay=1&loop=1&playlist=ODRK4c9fGbU"></div>
+                     <iframe loading="lazy" src="https://www.youtube.com/embed/ODRK4c9fGbU?mute=1&modestbranding=1&rel=0&controls=0&autoplay=1&loop=1&playlist=ODRK4c9fGbU" allow="autoplay; fullscreen" frameborder="0"></iframe>
                 </div>
             </div>
         </div>
@@ -1468,6 +1449,7 @@
                         <div>
                             <p style="color:var(--color-secondary); margin:0; opacity:1; font-weight:700;">Phone</p>
                             <p style="margin:0; opacity:0.9;">+91 8000013333</p>
+                            <p style="margin:0; opacity:0.9;">+91 9991119011</p>
                         </div>
                     </div>
                     <div class="contact-detail">
@@ -1520,7 +1502,7 @@
             <div class="footer-grid">
                 <div class="footer-col footer-about">
                     <a href="#" class="logo" style="display:block; margin-bottom:1.5rem;">
-                         <img src="assets/image/celebration-logo.png.png" alt="Celebration Garden" style="height: 50px;">
+                         <img src="assets/image/celebration-logo.png.png" alt="Celebration Garden" style="height: 50px;" loading="lazy">
                     </a>
                     <p>Celebration Garden is the premier venue for hosting life's most cherished moments in Kalindi Kunj, New Delhi. We blend sophisticated indoor spaces with breathtaking outdoor settings.</p>
                     <div style="display: flex; gap: 1rem; margin-top: 1rem;">
@@ -1561,7 +1543,7 @@
                         </li>
                         <li>
                             <i class="fas fa-phone-alt"></i>
-                            <span>+91 8000013333</span>
+                            <span>+91 8000013333 / 9991119011</span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
@@ -1625,11 +1607,6 @@
                 title: "Lounge Section", 
                 description: "Our comfortable lounge area provides a relaxed setting for guests to mingle and enjoy conversation. With plush seating and intimate lighting, it's the perfect escape from the dance floor.", 
                 images: ["assets/image/Hall7.JPG","assets/image/DSC_7867.JPG","assets/image/Hall5.JPG"] 
-            },
-            bar: { 
-                title: "Bar Counter", 
-                description: "Our elegantly designed bar counter offers premium beverage service with skilled bartenders ready to craft delicious drinks for your guests. The sophisticated design complements any event style.", 
-                images: ["https://images.unsplash.com/photo-1544145945-f90425340c7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"] 
             },
             photoshoot: { 
                 title: "Photoshoot Area", 
